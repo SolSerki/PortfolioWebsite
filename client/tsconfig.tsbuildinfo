@@ -1,1 +1,1 @@
-{"root":["./src/app.tsx","./src/main.tsx","./src/components/hero.tsx","./src/components/techstack.tsx","./src/contexts/languagecontext.tsx","./src/types/animejs-esm.d.ts"],"version":"5.9.2"}
+{"root":["./src/app.tsx","./src/main.tsx","./src/components/hero.tsx","./src/components/techstack.tsx","./src/contexts/languagecontext.tsx","./src/pages/contact.tsx","./src/pages/home.tsx","./src/types/animejs-esm.d.ts"],"version":"5.9.2"}
