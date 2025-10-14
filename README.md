@@ -1,38 +1,40 @@
-# Personal Portfolio (React + Node + Tailwind + Anime.js)
+# Personal Portfolio (React + Tailwind + Anime.js)
 
-This is a starter for your personal portfolio:
-- Frontend: React + Vite + TypeScript + Tailwind + Anime.js
-- Backend: Node.js + Express + TypeScript
+This is a simple, static portfolio:
+- Frontend only: React + Vite + TypeScript + Tailwind + Anime.js
+- No backend calls (tech stack is hard-coded; contact opens your email client)
 
 ## Getting Started
 
 1) Install dependencies
-- Open two terminals or use your editor's workspace
-- In /client and /server run:
-  npm install
+- `cd client`
+- `npm install`
 
-2) Run dev servers
-- In /server:
-  npm run dev
-- In /client:
-  npm run dev
-- Frontend: http://localhost:5173
-- Backend: http://localhost:4000
+2) Run locally
+- `npm run dev`
+- Open http://localhost:5173
 
-The frontend dev server proxies API calls to the backend during development.
+3) Build for production
+- `npm run build`
+- Preview the build: `npm run preview`
 
-## Environment
-- Server uses PORT=4000 by default
-- Copy server/.env.example to server/.env and edit if needed
+## Deployment
+Because it’s a static site, you can deploy the `client/dist` folder to any static host:
+- GitHub Pages, Netlify, Vercel (Static Site), Cloudflare Pages, etc.
+
+## Structure
+
+`client/` — Vite + React + TS + Tailwind app
+
+## Notes
+- The Tech Stack is rendered from a local constant (no network).
+- The Contact form creates a `mailto:` link. Set your address inside `client/src/App.tsx` (search for `you@example.com`).
 
 ## Tech Used
 - React, Vite, TypeScript
 - Tailwind CSS
-- Anime.js for animations
-- Node.js, Express
-- ESLint (basic)
+- Anime.js v4
 
 ## Next Steps
 - Add Projects data and pages
-- Add Contact form with email (Resend, Nodemailer, or a service)
-- Add deploy scripts (Vercel/Render)
+- Replace `mailto:` with a form service (e.g., Formspree, Netlify Forms) if desired, still without hosting your own backend.
