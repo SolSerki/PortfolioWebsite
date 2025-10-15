@@ -5,12 +5,13 @@ export interface BentoCardProps {
   color?: string;
   title?: string;
   description?: string;
-  label?: string;
+  label?: React.ReactNode;
   textAutoHide?: boolean;
   disableAnimations?: boolean;
   className?: string;
   colspan?: number;  // Cuántas columnas ocupa (1-4)
   rowspan?: number;  // Cuántas filas ocupa (1-3)
+  content?: React.ReactNode;  // Contenido personalizado (para iconos, etc)
 }
 
 export interface BentoProps {
@@ -698,14 +699,20 @@ const MagicBento: React.FC<BentoProps> = ({
                     <span className="card__label text-base">{card.label}</span>
                   </div>
                   <div className="card__content flex flex-col relative text-white">
-                    <h3 className={`card__title font-normal text-base m-0 mb-1 ${textAutoHide ? 'text-clamp-1' : ''}`}>
-                      {card.title}
-                    </h3>
-                    <p
-                      className={`card__description text-xs leading-5 opacity-90 ${textAutoHide ? 'text-clamp-2' : ''}`}
-                    >
-                      {card.description}
-                    </p>
+                    {card.content ? (
+                      card.content
+                    ) : (
+                      <>
+                        <h3 className={`card__title font-normal text-base m-0 mb-1 ${textAutoHide ? 'text-clamp-1' : ''}`}>
+                          {card.title}
+                        </h3>
+                        <p
+                          className={`card__description text-xs leading-5 opacity-90 ${textAutoHide ? 'text-clamp-2' : ''}`}
+                        >
+                          {card.description}
+                        </p>
+                      </>
+                    )}
                   </div>
                 </ParticleCard>
               );
@@ -830,12 +837,18 @@ const MagicBento: React.FC<BentoProps> = ({
                   <span className="card__label text-base">{card.label}</span>
                 </div>
                 <div className="card__content flex flex-col relative text-white">
-                  <h3 className={`card__title font-normal text-base m-0 mb-1 ${textAutoHide ? 'text-clamp-1' : ''}`}>
-                    {card.title}
-                  </h3>
-                  <p className={`card__description text-xs leading-5 opacity-90 ${textAutoHide ? 'text-clamp-2' : ''}`}>
-                    {card.description}
-                  </p>
+                  {card.content ? (
+                    card.content
+                  ) : (
+                    <>
+                      <h3 className={`card__title font-normal text-base m-0 mb-1 ${textAutoHide ? 'text-clamp-1' : ''}`}>
+                        {card.title}
+                      </h3>
+                      <p className={`card__description text-xs leading-5 opacity-90 ${textAutoHide ? 'text-clamp-2' : ''}`}>
+                        {card.description}
+                      </p>
+                    </>
+                  )}
                 </div>
               </div>
             );
