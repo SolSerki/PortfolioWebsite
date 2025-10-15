@@ -1,8 +1,10 @@
 import { useEffect } from 'react'
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
+import { Analytics } from '@vercel/analytics/react'
 import { useLanguage } from './contexts/LanguageContext'
 import Home from './pages/Home'
 import Contact from './pages/Contact'
+
 
 export default function App() {
   const { language, setLanguage, t } = useLanguage()
@@ -51,6 +53,7 @@ export default function App() {
           </div>
         </footer>
       </div>
+      <Analytics />
     </BrowserRouter>
   )
 }
