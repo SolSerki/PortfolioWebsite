@@ -35,12 +35,14 @@ ${description}
   return (
     <div className="min-h-screen py-16">
       <div className="mx-auto max-w-3xl px-4">
-        <h1 className="text-4xl font-bold mb-4">{t('contact.title')}</h1>
-        <p className="text-lg text-zinc-600 dark:text-zinc-400 mb-8">
-          {t('contact.budget.intro')}
-        </p>
+        <div className="transition-language">
+          <h1 className="text-4xl font-bold mb-4">{t('contact.title')}</h1>
+          <p className="text-lg text-zinc-600 dark:text-zinc-400 mb-8">
+            {t('contact.budget.intro')}
+          </p>
+        </div>
 
-        <form onSubmit={handleSubmit} className="grid gap-5">
+        <form onSubmit={handleSubmit} className="grid gap-5 transition-language">
           {/* Name */}
           <div>
             <label htmlFor="name" className="block text-sm font-medium mb-2">

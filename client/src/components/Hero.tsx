@@ -3,6 +3,7 @@ import { animate, createTimeline, stagger } from 'animejs'
 import { useLanguage } from '../contexts/LanguageContext'
 import DarkVeil from './DarkVeil'
 import TechStack from './TechStack'
+import AvailabilityBadge from './AvailabilityBadge'
 
 export default function Hero() {
   const { t } = useLanguage()
@@ -59,6 +60,12 @@ export default function Hero() {
         <p ref={subtitleRef} className="mt-4 text-lg text-zinc-300 drop-shadow-md">
           {t('hero.subtitle')}
         </p>
+        
+        <div className="mt-6">
+          <AvailabilityBadge status="available" />
+        </div>
+
+        
         <TechStack />
       </div>
     </section>

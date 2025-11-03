@@ -7,12 +7,83 @@ type Translations = {
   'nav.projects': string
   'nav.techStack': string
   'nav.contact': string
+  'nav.about': string
   
   // Hero
   'hero.title': string
   'hero.subtitle': string
   'hero.cta.projects': string
   'hero.cta.stack': string
+  
+  // About
+  'about.title': string
+  'about.subtitle': string
+  'about.profile.title': string
+  'about.profile.description': string
+  'about.work.title': string
+  'about.work.vetty.role': string
+  'about.work.vetty.period': string
+  'about.work.vetty.company': string
+  'about.work.vetty.description': string
+  'about.work.accenture.role': string
+  'about.work.accenture.period': string
+  'about.work.accenture.company': string
+  'about.work.accenture.point1': string
+  'about.work.accenture.point2': string
+  'about.work.accenture.point3': string
+  'about.work.accenture.point4': string
+  'about.education.title': string
+  'about.education.architecture.degree': string
+  'about.education.architecture.school': string
+  'about.education.architecture.period': string
+  'about.education.music.degree': string
+  'about.education.music.school': string
+  'about.education.music.period': string
+  'about.education.electronics.degree': string
+  'about.education.electronics.school': string
+  'about.education.electronics.period': string
+  'about.education.epic.degree': string
+  'about.education.epic.school': string
+  'about.education.epic.period': string
+  'about.interests.title': string
+  'about.interests.reading.title': string
+  'about.interests.reading.description': string
+  'about.interests.writing.title': string
+  'about.interests.writing.description': string
+  'about.interests.gaming.title': string
+  'about.interests.gaming.description': string
+  'about.interests.music.title': string
+  'about.interests.music.description': string
+  'about.interests.roleplay.title': string
+  'about.interests.roleplay.description': string
+  'about.interests.cooking.title': string
+  'about.interests.cooking.description': string
+  
+  // Services
+  'services.title': string
+  'services.subtitle': string
+  'services.whatIDo': string
+  'services.whatIDontDo': string
+  'services.webApps': string
+  'services.webAppsDesc': string
+  'services.dashboards': string
+  'services.dashboardsDesc': string
+  'services.mobileApps': string
+  'services.mobileAppsDesc': string
+  'services.saas': string
+  'services.saasDesc': string
+  'services.portfolios': string
+  'services.portfoliosDesc': string
+  'services.backend': string
+  'services.backendDesc': string
+  'services.uxui': string
+  'services.uxuiDesc': string
+  'services.branding': string
+  'services.brandingDesc': string
+  'services.illustration': string
+  'services.illustrationDesc': string
+  'services.animation': string
+  'services.animationDesc': string
   
   // Tech Stack
   'stack.title': string
@@ -67,11 +138,80 @@ const translations: Record<Language, Translations> = {
     'nav.projects': 'Projects',
     'nav.techStack': 'Tech Stack',
     'nav.contact': 'Contact',
+    'nav.about': 'About',
     
     'hero.title': 'Back End Developer learning Node.js & React',
     'hero.subtitle': '5+ years building reliable web backends (.NET, Java/Spring). Now expanding into Node.js, React, Tailwind, and delightful UI animations.',
     'hero.cta.projects': 'View Projects',
     'hero.cta.stack': 'My Tech Stack',
+    
+    'about.title': 'About Me',
+    'about.subtitle': 'Sol Serki',
+    'about.profile.title': 'Profile',
+    'about.profile.description': 'Back-end developer with 6+ years of experience in web applications, specializing in .NET. I have a strong track record of delivering high quality code, including best practices such as unit testing and development focused on scalability and reliability.',
+    'about.work.title': 'Work Experience',
+    'about.work.vetty.role': 'Full-Stack Lead Developer',
+    'about.work.vetty.period': 'Nov 2023 - Present',
+    'about.work.vetty.company': 'Vetty Startup - Rosario',
+    'about.work.vetty.description': 'Currently working as a Full-Stack developer, leading the creation of a comprehensive management application for a veterinary clinic, developed in Java with Spring Boot. My focus is on tackling challenges such as designing a scalable architecture, implementing key functionalities, and ensuring a smooth user experience. Additionally, I am focused on delivering a robust and efficient solution that meets the specific needs of the client.',
+    'about.work.accenture.role': 'Back-End Developer',
+    'about.work.accenture.period': 'Jan 2018 - July 2023',
+    'about.work.accenture.company': 'Accenture - Rosario',
+    'about.work.accenture.point1': 'Developed robust and maintainable web components, including REST APIs for system integration, achieving high client satisfaction rates and meeting deadlines.',
+    'about.work.accenture.point2': 'Applied design patterns that reduced unit test execution time by 85%, increasing development cycle efficiency.',
+    'about.work.accenture.point3': 'Led as the technical English referent, facilitating communication between international teams and clients.',
+    'about.work.accenture.point4': 'Fostered a collaborative and positive work environment, promoting high team performance.',
+    'about.education.title': 'Education',
+    'about.education.architecture.degree': 'Honours Bachelor Degree in Architecture',
+    'about.education.architecture.school': 'Buenos Aires University',
+    'about.education.architecture.period': '2005 - 2014',
+    'about.education.music.degree': 'Music Teacher - Singing Specialization',
+    'about.education.music.school': 'School of Popular Music',
+    'about.education.music.period': '2011 - 2014',
+    'about.education.electronics.degree': 'Certificate in Electronics and Robotics',
+    'about.education.electronics.school': 'School in Technical Education',
+    'about.education.electronics.period': '2001 - 2004',
+    'about.education.epic.degree': 'Employment and Training for Immigrants',
+    'about.education.epic.school': 'The EPIC Programme - BITC',
+    'about.education.epic.period': '2018',
+    'about.interests.title': 'Interests & Hobbies',
+    'about.interests.reading.title': 'Reading',
+    'about.interests.reading.description': 'I love reading from fantasy novels to books about writing.',
+    'about.interests.writing.title': 'Writing',
+    'about.interests.writing.description': 'I write novels and poetry, and I\'m planning to continue developing my skills.',
+    'about.interests.gaming.title': 'Gaming',
+    'about.interests.gaming.description': 'I enjoy playing games on PC and Magic the Gathering with my friends.',
+    'about.interests.music.title': 'Music',
+    'about.interests.music.description': 'I adore singing and I\'m currently taking lessons.',
+    'about.interests.roleplay.title': 'Role-Play',
+    'about.interests.roleplay.description': 'I\'ve been playing role-play games for over 15 years and have DMed several campaigns.',
+    'about.interests.cooking.title': 'Cooking',
+    'about.interests.cooking.description': 'Great cook, nothing beats preparing your own delicious meal!',
+    
+    'services.title': 'Services',
+    'services.subtitle': 'What I can (and can\'t) help you with',
+    'services.whatIDo': 'What I Do',
+    'services.whatIDontDo': 'What I Don\'t Do',
+    'services.webApps': 'Web Applications',
+    'services.webAppsDesc': 'Full-stack web apps with robust backend and modern frontend',
+    'services.dashboards': 'Dashboards',
+    'services.dashboardsDesc': 'Data visualization and admin panels with real-time updates',
+    'services.mobileApps': 'Mobile Apps',
+    'services.mobileAppsDesc': 'Cross-platform mobile applications with React Native',
+    'services.saas': 'SaaS Products',
+    'services.saasDesc': 'Scalable software-as-a-service platforms',
+    'services.portfolios': 'Portfolios',
+    'services.portfoliosDesc': 'Professional portfolio websites with custom animations',
+    'services.backend': 'Backend Development',
+    'services.backendDesc': 'REST APIs, databases, authentication, and server architecture',
+    'services.uxui': 'UX/UI Design',
+    'services.uxuiDesc': 'I focus on development, not design work',
+    'services.branding': 'Branding',
+    'services.brandingDesc': 'Logo design, brand identity, and visual systems',
+    'services.illustration': 'Illustration',
+    'services.illustrationDesc': 'Custom illustrations and graphic design',
+    'services.animation': 'Complex Animations',
+    'services.animationDesc': 'Advanced motion graphics and video production',
     
     'stack.title': 'Tech Stack',
     'stack.learningNow': 'Learning Now',
@@ -120,11 +260,80 @@ const translations: Record<Language, Translations> = {
     'nav.projects': 'Proyectos',
     'nav.techStack': 'Stack Técnico',
     'nav.contact': 'Contacto',
+    'nav.about': 'Sobre Mí',
     
     'hero.title': 'Desarrolladora Back End aprendiendo Node.js y React',
     'hero.subtitle': '5+ años construyendo backends web confiables (.NET, Java/Spring). Ahora expandiéndome a Node.js, React, Tailwind y animaciones UI encantadoras.',
     'hero.cta.projects': 'Ver Proyectos',
     'hero.cta.stack': 'Mi Stack Técnico',
+    
+    'about.title': 'Sobre Mí',
+    'about.subtitle': 'Sol Serki',
+    'about.profile.title': 'Perfil',
+    'about.profile.description': 'Desarrolladora back-end con 6+ años de experiencia en aplicaciones web, especializada en .NET. Tengo un sólido historial de entrega de código de alta calidad, incluyendo mejores prácticas como unit testing y desarrollo enfocado en escalabilidad y confiabilidad.',
+    'about.work.title': 'Experiencia Laboral',
+    'about.work.vetty.role': 'Full-Stack Lead Developer',
+    'about.work.vetty.period': 'Nov 2023 - Presente',
+    'about.work.vetty.company': 'Vetty Startup - Rosario',
+    'about.work.vetty.description': 'Actualmente trabajo como desarrolladora Full-Stack, liderando la creación de una aplicación de gestión integral para una clínica veterinaria, desarrollada en Java con Spring Boot. Mi enfoque está en abordar desafíos como el diseño de una arquitectura escalable, la implementación de funcionalidades clave y asegurar una experiencia de usuario fluida. Además, estoy enfocada en entregar una solución robusta y eficiente que cumpla con las necesidades específicas del cliente.',
+    'about.work.accenture.role': 'Desarrolladora Back-End',
+    'about.work.accenture.period': 'Ene 2018 - Jul 2023',
+    'about.work.accenture.company': 'Accenture - Rosario',
+    'about.work.accenture.point1': 'Desarrollé componentes web robustos y mantenibles, incluyendo APIs REST para integración de sistemas, logrando altas tasas de satisfacción del cliente y cumpliendo plazos.',
+    'about.work.accenture.point2': 'Apliqué patrones de diseño que redujeron el tiempo de ejecución de unit tests en un 85%, aumentando la eficiencia del ciclo de desarrollo.',
+    'about.work.accenture.point3': 'Lideré como referente técnico de inglés, facilitando la comunicación entre equipos internacionales y clientes.',
+    'about.work.accenture.point4': 'Fomenté un ambiente de trabajo colaborativo y positivo, promoviendo el alto rendimiento del equipo.',
+    'about.education.title': 'Educación',
+    'about.education.architecture.degree': 'Licenciatura con Honores en Arquitectura',
+    'about.education.architecture.school': 'Universidad de Buenos Aires',
+    'about.education.architecture.period': '2005 - 2014',
+    'about.education.music.degree': 'Profesora de Música - Especialización en Canto',
+    'about.education.music.school': 'Escuela de Música Popular',
+    'about.education.music.period': '2011 - 2014',
+    'about.education.electronics.degree': 'Certificado en Electrónica y Robótica',
+    'about.education.electronics.school': 'Escuela de Educación Técnica',
+    'about.education.electronics.period': '2001 - 2004',
+    'about.education.epic.degree': 'Empleo y Capacitación para Inmigrantes',
+    'about.education.epic.school': 'The EPIC Programme - BITC',
+    'about.education.epic.period': '2018',
+    'about.interests.title': 'Intereses y Hobbies',
+    'about.interests.reading.title': 'Lectura',
+    'about.interests.reading.description': 'Me encanta leer desde novelas de fantasía hasta libros sobre escritura.',
+    'about.interests.writing.title': 'Escritura',
+    'about.interests.writing.description': 'Escribo novelas y poesía, y planeo seguir desarrollando mis habilidades.',
+    'about.interests.gaming.title': 'Gaming',
+    'about.interests.gaming.description': 'Disfruto jugar juegos en PC y Magic the Gathering con mis amigos.',
+    'about.interests.music.title': 'Música',
+    'about.interests.music.description': 'Adoro cantar y actualmente estoy tomando clases.',
+    'about.interests.roleplay.title': 'Rol',
+    'about.interests.roleplay.description': 'Llevo más de 15 años jugando juegos de rol y he dirigido varias campañas como DM.',
+    'about.interests.cooking.title': 'Cocina',
+    'about.interests.cooking.description': 'Excelente cocinera, ¡nada supera preparar tu propia comida deliciosa!',
+    
+    'services.title': 'Servicios',
+    'services.subtitle': 'En qué puedo (y no puedo) ayudarte',
+    'services.whatIDo': 'Lo Que Hago',
+    'services.whatIDontDo': 'Lo Que NO Hago',
+    'services.webApps': 'Aplicaciones Web',
+    'services.webAppsDesc': 'Apps web full-stack con backend robusto y frontend moderno',
+    'services.dashboards': 'Dashboards',
+    'services.dashboardsDesc': 'Visualización de datos y paneles admin con actualizaciones en tiempo real',
+    'services.mobileApps': 'Aplicaciones Móviles',
+    'services.mobileAppsDesc': 'Aplicaciones móviles multiplataforma con React Native',
+    'services.saas': 'Productos SaaS',
+    'services.saasDesc': 'Plataformas software-as-a-service escalables',
+    'services.portfolios': 'Portfolios',
+    'services.portfoliosDesc': 'Sitios web de portfolio profesionales con animaciones personalizadas',
+    'services.backend': 'Desarrollo Backend',
+    'services.backendDesc': 'APIs REST, bases de datos, autenticación y arquitectura de servidor',
+    'services.uxui': 'Diseño UX/UI',
+    'services.uxuiDesc': 'Me enfoco en desarrollo, no en trabajo de diseño',
+    'services.branding': 'Branding',
+    'services.brandingDesc': 'Diseño de logos, identidad de marca y sistemas visuales',
+    'services.illustration': 'Ilustración',
+    'services.illustrationDesc': 'Ilustraciones personalizadas y diseño gráfico',
+    'services.animation': 'Animaciones Complejas',
+    'services.animationDesc': 'Motion graphics avanzados y producción de video',
     
     'stack.title': 'Stack Técnico',
     'stack.learningNow': 'Aprendiendo Ahora',
