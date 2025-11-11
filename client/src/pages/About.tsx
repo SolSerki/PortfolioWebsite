@@ -11,9 +11,6 @@ export default function About() {
         {/* Header */}
         <div className="mb-12 transition-language">
           <h1 className="text-4xl font-bold mb-4">{t('about.title')}</h1>
-          <p className="text-xl text-zinc-600 dark:text-zinc-400">
-            {t('about.subtitle')}
-          </p>
         </div>
 
         {/* Profile Section */}

@@ -140,7 +140,7 @@ const translations: Record<Language, Translations> = {
     'nav.contact': 'Contact',
     'nav.about': 'About',
     
-    'hero.title': 'Back End Developer learning Node.js & React',
+    'hero.title': 'Sol Serki',
     'hero.subtitle': '5+ years building reliable web backends (.NET, Java/Spring). Now expanding into Node.js, React, Tailwind, and delightful UI animations.',
     'hero.cta.projects': 'View Projects',
     'hero.cta.stack': 'My Tech Stack',
@@ -189,7 +189,7 @@ const translations: Record<Language, Translations> = {
     'about.interests.cooking.description': 'Great cook, nothing beats preparing your own delicious meal!',
     
     'services.title': 'Services',
-    'services.subtitle': 'What I can (and can\'t) help you with',
+    'services.subtitle': 'What I can help you with',
     'services.whatIDo': 'What I Do',
     'services.whatIDontDo': 'What I Don\'t Do',
     'services.webApps': 'Web Applications',

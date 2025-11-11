@@ -1,176 +1,197 @@
 import { useLanguage } from '../contexts/LanguageContext'
-import MagicBento, { type BentoCardProps } from './MagicBento'
+import LogoLoop, { type LogoItem } from './LogoLoop'
 import { 
   SiNodedotjs, SiReact, SiTailwindcss, 
   SiDotnet, SiSpring, SiHibernate,
   SiJsonwebtokens, SiGit, SiJenkins, SiSitecore,
   SiJunit5
 } from 'react-icons/si'
-import { FaJava, FaCode, FaLanguage, FaTasks } from 'react-icons/fa'
+import { FaJava, FaCode, FaTasks } from 'react-icons/fa'
 
 export default function TechStack() {
   const { t } = useLanguage()
   
-  // Definir las cards con iconos y contenido personalizado
-  const stackCards: BentoCardProps[] = [
+  // Definir los logos de tecnologías
+  const techLogos: LogoItem[] = [
+    // Learning Now
     { 
-      color: '#1a0b2e',
-      label: <h3 className="font-semibold text-lg mb-3">{t('stack.learningNow')}</h3>,
-      colspan: 1,
-      rowspan: 1,
-      content: (
-        <div className="flex flex-col h-full">
-          <div className="flex flex-col gap-2 flex-1">
-            <div className="flex items-center gap-2 text-sm">
-              <SiNodedotjs className="text-green-500 text-xl flex-shrink-0" />
-              <span>Node.js</span>
-            </div>
-            <div className="flex items-center gap-2 text-sm">
-              <SiReact className="text-cyan-400 text-xl flex-shrink-0" />
-              <span>React</span>
-            </div>
-            <div className="flex items-center gap-2 text-sm">
-              <SiTailwindcss className="text-sky-400 text-xl flex-shrink-0" />
-              <span>Tailwind CSS</span>
-            </div>
-            <div className="flex items-center gap-2 text-sm">
-              <FaCode className="text-purple-400 text-xl flex-shrink-0" />
-              <span>Anime.js</span>
-            </div>
-          </div>
+      node: (
+        <div className="flex items-center gap-2 px-4 py-2 rounded-lg bg-zinc-900/50 border border-zinc-800">
+          <SiNodedotjs className="text-green-500 text-2xl" />
+          <span className="text-sm font-medium">Node.js</span>
         </div>
-      )
+      ),
+      title: 'Node.js'
     },
     { 
-      color: '#1a0b2e',
-      label: <h3 className="font-semibold text-lg mb-3">{t('stack.backend')}</h3>,
-      colspan: 1,
-      rowspan: 1,
-      content: (
-        <div className="flex flex-col h-full">
-          
-          <div className="flex flex-col gap-2 flex-1">
-            <div className="flex items-center gap-2 text-sm">
-              <SiDotnet className="text-purple-500 text-xl flex-shrink-0" />
-              <span>.NET MVC, Entity Framework</span>
-            </div>
-            <div className="flex items-center gap-2 text-sm">
-              <FaJava className="text-orange-500 text-xl flex-shrink-0" />
-              <span>Java</span>
-            </div>
-            <div className="flex items-center gap-2 text-sm">
-              <SiSpring className="text-green-500 text-xl flex-shrink-0" />
-              <span>Spring Boot</span>
-            </div>
-            <div className="flex items-center gap-2 text-sm">
-              <SiHibernate className="text-gray-400 text-xl flex-shrink-0" />
-              <span>Hibernate</span>
-            </div>
-            <div className="flex items-center gap-2 text-sm">
-              <FaCode className="text-blue-400 text-xl flex-shrink-0" />
-              <span>REST APIs</span>
-            </div>
-          </div>
+      node: (
+        <div className="flex items-center gap-2 px-4 py-2 rounded-lg bg-zinc-900/50 border border-zinc-800">
+          <SiReact className="text-cyan-400 text-2xl" />
+          <span className="text-sm font-medium">React</span>
         </div>
-      )
+      ),
+      title: 'React'
     },
     { 
-      color: '#1a0b2e',
-      label: <h3 className="font-semibold text-lg mb-3">{t('stack.authSecurity')}</h3>,
-      colspan: 1,
-      rowspan: 1,
-      content: (
-        <div className="flex flex-col h-full">
-          <div className="flex items-center gap-2 text-sm">
-            <SiJsonwebtokens className="text-pink-400 text-xl flex-shrink-0" />
-            <span>JWT</span>
-          </div>
+      node: (
+        <div className="flex items-center gap-2 px-4 py-2 rounded-lg bg-zinc-900/50 border border-zinc-800">
+          <SiTailwindcss className="text-sky-400 text-2xl" />
+          <span className="text-sm font-medium">Tailwind CSS</span>
         </div>
-      )
+      ),
+      title: 'Tailwind CSS'
     },
     { 
-      color: '#1a0b2e',
-      label: <h3 className="font-semibold text-lg mb-3">{t('stack.tools')}</h3>,
-      colspan: 1,
-      rowspan: 1,
-      content: (
-        <div className="flex flex-col h-full">
-          <div className="flex flex-col gap-2">
-            <div className="flex items-center gap-2 text-sm">
-              <SiGit className="text-orange-600 text-xl flex-shrink-0" />
-              <span>Git</span>
-            </div>
-            <div className="flex items-center gap-2 text-sm">
-              <SiJenkins className="text-red-500 text-xl flex-shrink-0" />
-              <span>Jenkins</span>
-            </div>
-            <div className="flex items-center gap-2 text-sm">
-              <SiSitecore className="text-red-600 text-xl flex-shrink-0" />
-              <span>Sitecore</span>
-            </div>
-          </div>
+      node: (
+        <div className="flex items-center gap-2 px-4 py-2 rounded-lg bg-zinc-900/50 border border-zinc-800">
+          <FaCode className="text-purple-400 text-2xl" />
+          <span className="text-sm font-medium">Anime.js</span>
         </div>
-      )
+      ),
+      title: 'Anime.js'
+    },
+    
+    // Backend
+    { 
+      node: (
+        <div className="flex items-center gap-2 px-4 py-2 rounded-lg bg-zinc-900/50 border border-zinc-800">
+          <SiDotnet className="text-purple-500 text-2xl" />
+          <span className="text-sm font-medium">.NET MVC</span>
+        </div>
+      ),
+      title: '.NET MVC'
     },
     { 
-      color: '#1a0b2e',
-      label:  <h3 className="font-semibold text-lg mb-3">{t('stack.practices')}</h3>,
-      colspan: 1,
-      rowspan: 1,
-      content: (
-        <div className="flex flex-col h-full">
-          <div className="flex flex-col gap-2">
-            <div className="flex items-center gap-2 text-sm">
-              <SiJunit5 className="text-green-400 text-xl flex-shrink-0" />
-              <span>Unit Testing</span>
-            </div>
-            <div className="flex items-center gap-2 text-sm">
-              <FaCode className="text-indigo-400 text-xl flex-shrink-0" />
-              <span>Design Patterns</span>
-            </div>
-            <div className="flex items-center gap-2 text-sm">
-              <FaTasks className="text-blue-400 text-xl flex-shrink-0" />
-              <span>Scrum, FDD</span>
-            </div>
-          </div>
+      node: (
+        <div className="flex items-center gap-2 px-4 py-2 rounded-lg bg-zinc-900/50 border border-zinc-800">
+          <SiDotnet className="text-purple-500 text-2xl" />
+          <span className="text-sm font-medium">Entity Framework</span>
         </div>
-      )
+      ),
+      title: 'Entity Framework'
     },
     { 
-      color: '#1a0b2e',
-      label: <h3 className="font-semibold text-lg mb-3">{t('stack.languages')}</h3>,
-      content: (
-        <div className="flex flex-col h-full">
-          <div className="flex flex-col gap-2">
-            <div className="flex items-center gap-2 text-sm">
-              <FaLanguage className="text-blue-400 text-xl flex-shrink-0" />
-              <span>English (C2)</span>
-            </div>
-            <div className="flex items-center gap-2 text-sm">
-              <FaLanguage className="text-yellow-400 text-xl flex-shrink-0" />
-              <span>Spanish (Native)</span>
-            </div>
-          </div>
+      node: (
+        <div className="flex items-center gap-2 px-4 py-2 rounded-lg bg-zinc-900/50 border border-zinc-800">
+          <FaJava className="text-orange-500 text-2xl" />
+          <span className="text-sm font-medium">Java</span>
         </div>
-      )
+      ),
+      title: 'Java'
+    },
+    { 
+      node: (
+        <div className="flex items-center gap-2 px-4 py-2 rounded-lg bg-zinc-900/50 border border-zinc-800">
+          <SiSpring className="text-green-500 text-2xl" />
+          <span className="text-sm font-medium">Spring Boot</span>
+        </div>
+      ),
+      title: 'Spring Boot'
+    },
+    { 
+      node: (
+        <div className="flex items-center gap-2 px-4 py-2 rounded-lg bg-zinc-900/50 border border-zinc-800">
+          <SiHibernate className="text-gray-400 text-2xl" />
+          <span className="text-sm font-medium">Hibernate</span>
+        </div>
+      ),
+      title: 'Hibernate'
+    },
+    { 
+      node: (
+        <div className="flex items-center gap-2 px-4 py-2 rounded-lg bg-zinc-900/50 border border-zinc-800">
+          <FaCode className="text-blue-400 text-2xl" />
+          <span className="text-sm font-medium">REST APIs</span>
+        </div>
+      ),
+      title: 'REST APIs'
+    },
+    
+    // Auth/Security
+    { 
+      node: (
+        <div className="flex items-center gap-2 px-4 py-2 rounded-lg bg-zinc-900/50 border border-zinc-800">
+          <SiJsonwebtokens className="text-pink-400 text-2xl" />
+          <span className="text-sm font-medium">JWT</span>
+        </div>
+      ),
+      title: 'JWT'
+    },
+    
+    // Tools
+    { 
+      node: (
+        <div className="flex items-center gap-2 px-4 py-2 rounded-lg bg-zinc-900/50 border border-zinc-800">
+          <SiGit className="text-orange-600 text-2xl" />
+          <span className="text-sm font-medium">Git</span>
+        </div>
+      ),
+      title: 'Git'
+    },
+    { 
+      node: (
+        <div className="flex items-center gap-2 px-4 py-2 rounded-lg bg-zinc-900/50 border border-zinc-800">
+          <SiJenkins className="text-red-500 text-2xl" />
+          <span className="text-sm font-medium">Jenkins</span>
+        </div>
+      ),
+      title: 'Jenkins'
+    },
+    { 
+      node: (
+        <div className="flex items-center gap-2 px-4 py-2 rounded-lg bg-zinc-900/50 border border-zinc-800">
+          <SiSitecore className="text-red-600 text-2xl" />
+          <span className="text-sm font-medium">Sitecore</span>
+        </div>
+      ),
+      title: 'Sitecore'
+    },
+    
+    // Practices
+    { 
+      node: (
+        <div className="flex items-center gap-2 px-4 py-2 rounded-lg bg-zinc-900/50 border border-zinc-800">
+          <SiJunit5 className="text-green-400 text-2xl" />
+          <span className="text-sm font-medium">Unit Testing</span>
+        </div>
+      ),
+      title: 'Unit Testing'
+    },
+    { 
+      node: (
+        <div className="flex items-center gap-2 px-4 py-2 rounded-lg bg-zinc-900/50 border border-zinc-800">
+          <FaCode className="text-indigo-400 text-2xl" />
+          <span className="text-sm font-medium">Design Patterns</span>
+        </div>
+      ),
+      title: 'Design Patterns'
+    },
+    { 
+      node: (
+        <div className="flex items-center gap-2 px-4 py-2 rounded-lg bg-zinc-900/50 border border-zinc-800">
+          <FaTasks className="text-blue-400 text-2xl" />
+          <span className="text-sm font-medium">Scrum, FDD</span>
+        </div>
+      ),
+      title: 'Scrum, FDD'
     }
   ]
 
   return (
     <section id="stack" className="mx-auto max-w-6xl px-4 py-16">
-      <div className="flex justify-center">
-        <MagicBento 
-          cards={stackCards}
-          textAutoHide={false}
-          enableStars={true}
-          enableSpotlight={true}
-          enableBorderGlow={true}
-          enableTilt={false}
-          enableMagnetism={false}
-          clickEffect={true}
-          spotlightRadius={300}
-          particleCount={15}
-          glowColor="99, 102, 241"
+      {/* <h2 className="text-3xl font-bold text-center mb-8">{t('stack.title')}</h2> */}
+      
+      <div className="space-y-8">
+        <LogoLoop 
+          logos={techLogos}
+          speed={50}
+          direction="left"
+          logoHeight={15}
+          gap={24}
+          pauseOnHover={true}
+          scaleOnHover={true}
+          fadeOut={true}
+          ariaLabel="Tech Stack"
         />
       </div>
     </section>
