@@ -7,14 +7,24 @@ import About from './pages/About'
 import Projects from './pages/Projects'
 import Services from './pages/Services'
 import Contact from './pages/Contact'
+import Creative from './pages/Creative'
 import { HiHome, HiRectangleGroup, HiCog6Tooth, HiEnvelope, HiLanguage, HiUser } from 'react-icons/hi2'
 
 export default function App() {
   const { language, setLanguage, t } = useLanguage()
   const [activeSection, setActiveSection] = useState<string>('hero')
   const [navVisible, setNavVisible] = useState(true)
+  const [showCreative, setShowCreative] = useState(false)
   const isScrollingRef = useRef(false)
   const scrollTimeoutRef = useRef<NodeJS.Timeout | null>(null)
+
+  // Check for creative mode in URL
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search)
+    if (params.get('creative') === 'true') {
+      setShowCreative(true)
+    }
+  }, [])
 
   // Basic dark-mode toggle persisted in localStorage
   useEffect(() => {
@@ -131,6 +141,16 @@ export default function App() {
       isActive: false
     }
   ]
+
+  // If creative mode is active, show only the Creative page
+  if (showCreative) {
+    return (
+      <>
+        <Creative />
+        <Analytics />
+      </>
+    )
+  }
 
   return (
     <>
