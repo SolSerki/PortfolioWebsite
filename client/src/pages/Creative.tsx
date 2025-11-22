@@ -1,7 +1,11 @@
 import { useState } from 'react'
 import { useLanguage } from '../contexts/LanguageContext'
-import { HiLockClosed, HiSparkles, HiPencil, HiBookOpen, HiStar, HiShieldCheck } from 'react-icons/hi2'
-
+import { ReactSVG } from "react-svg";
+import { HiLockClosed, HiSparkles, HiPencil, HiBookOpen, HiStar, HiShieldCheck, HiArrowLeft } from 'react-icons/hi2'
+import FrameAntique from '../svg/FrameAntique.svg?react'
+import FlowerIcon from '../svg/FlowerIcon.svg?react';
+import SplashCursor from '../components/SplashCursor';
+import { GiBodyHeight } from 'react-icons/gi';
 type CreativeTab = 'poems' | 'stories' | 'writing-resources' | 'tarot' | 'knights-witches'
 
 export default function Creative() {
@@ -10,6 +14,8 @@ export default function Creative() {
   const [password, setPassword] = useState('')
   const [error, setError] = useState(false)
   const [activeTab, setActiveTab] = useState<CreativeTab>('poems')
+  const [selectedPoem, setSelectedPoem] = useState<number | null>(null)
+  const [isCursorEnabled, setIsCursorEnabled] = useState(true)
 
   const handlePasswordSubmit = (e: React.FormEvent) => {
     e.preventDefault()
@@ -37,17 +43,26 @@ export default function Creative() {
           {/* Lock Icon */}
           <div className="flex justify-center mb-8">
             <div className="p-6 bg-gradient-to-br from-purple-500/20 to-pink-500/20 rounded-full border border-purple-500/30 backdrop-blur-sm">
-              <HiLockClosed className="text-6xl text-purple-400" />
+              <HiLockClosed  className="text-6xl text-purple-400" />
             </div>
           </div>
 
           {/* Title */}
           <div className="text-center mb-8">
             <h1 className="text-4xl font-bold mb-3 bg-gradient-to-r from-purple-400 via-pink-400 to-purple-400 bg-clip-text text-transparent">
-              Espacio Creativo
+              Sección Restringida
             </h1>
-            <p className="text-zinc-400 text-sm">
-              Di las palabras mágicas y entra a mi mundo
+            <p className="text-zinc-400 text-sm italic">
+              Bloom thy roses
+            </p>
+            <p className="text-zinc-400 text-sm italic">
+              Beware the thorns
+            </p>
+            <p className="text-zinc-400 text-sm italic">
+              Continue at your peril
+            </p>
+           <p className="text-zinc-400 text-sm italic">
+              You’ve been warned
             </p>
           </div>
 
@@ -91,25 +106,49 @@ export default function Creative() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-950 via-zinc-900 to-black">
-      <div className="mx-auto max-w-7xl px-6 py-16">
+    <>
+      {isCursorEnabled && <SplashCursor />}
+      <div className="min-h-screen bg-gradient-to-br from-purple-950 via-zinc-900 to-black">
+        <div className="mx-auto max-w-7xl px-6 py-16">
+        {/* Toggle Cursor Button */}
+        <div className="flex justify-end mb-6">
+          <button
+            onClick={() => setIsCursorEnabled(!isCursorEnabled)}
+            className="flex items-center gap-2 px-4 py-2 rounded-lg bg-zinc-900/50 border border-zinc-800 hover:border-purple-500/50 text-zinc-400 hover:text-purple-400 transition-all"
+          >
+            <HiSparkles className={`text-lg ${isCursorEnabled ? 'text-purple-400' : 'text-zinc-600'}`} />
+            <span className="text-sm">{isCursorEnabled ? 'Cursor ON' : 'Cursor OFF'}</span>
+          </button>
+        </div>
+        
         {/* Header */}
         <div className="text-center mb-12">
-          <h1 className="text-5xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-purple-400 via-pink-400 to-purple-400 bg-clip-text text-transparent">
-            The Keep
-          </h1>
-          <p className="text-zinc-400 text-lg">
-            n. an important part of our personality that others seldom see.
-          </p>
-        <p className="text-zinc-400 text-lg">
-    - a secret flaw, a hidden talent, trauma that never comes up, dreams we never mention -
-          </p>
-        <p className="text-zinc-400 text-lg">
-    that remains a vital part of who we are even if nobody knows it's there.
-          </p>
-          <p className="text-zinc-500 text-lg">
-            The Dictionary of Obscure Sorrows - John Koenig
-          </p>
+          <div className="relative w-full max-w-4xl mx-auto">
+            <div className="w-full aspect-[3/2]">
+              <FrameAntique 
+                className="w-full h-full"
+                preserveAspectRatio="xMidYMid meet"
+              />
+            </div>
+            <div className="absolute inset-0 flex flex-col items-center justify-center px-8 md:px-16">
+              <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-2 md:mb-4 bg-gradient-to-r from-purple-400 via-pink-400 to-purple-400 bg-clip-text text-transparent">
+                Keep
+              </h1>
+              <p className="text-zinc-400 text-sm md:text-base lg:text-lg mb-1 md:mb-2">
+                n. an important part of our personality that others seldom see
+              </p>
+              <p className="text-zinc-400 text-sm md:text-base lg:text-lg mb-1 md:mb-2">
+                ― a secret flaw, a hidden talent, trauma that never comes up, dreams we never mention ―
+              </p>
+              
+              <p className="text-zinc-400 text-sm md:text-base lg:text-lg mb-2 md:mb-4">
+                that remains a vital part of who we are even if nobody knows it's there.
+              </p>
+              <p className="text-zinc-500 text-xs md:text-sm italic">
+                The Dictionary of Obscure Sorrows - John Koenig
+              </p>
+            </div>
+          </div>
         </div>
 
         {/* Tabs Navigation */}
@@ -117,7 +156,12 @@ export default function Creative() {
           {tabs.map((tab) => (
             <button
               key={tab.id}
-              onClick={() => setActiveTab(tab.id)}
+              onClick={() => {
+                setActiveTab(tab.id)
+                if (tab.id === 'poems') {
+                  setSelectedPoem(null)
+                }
+              }}
               className={`flex items-center gap-2 px-6 py-3 rounded-xl font-medium transition-all ${
                 activeTab === tab.id
                   ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white shadow-lg shadow-purple-500/30'
@@ -133,11 +177,193 @@ export default function Creative() {
         {/* Content Area */}
         <div className="bg-zinc-900/30 backdrop-blur-sm rounded-2xl border border-zinc-800 p-8 min-h-[500px]">
           {activeTab === 'poems' && (
-            <div className="text-center py-20">
-              <HiSparkles className="text-6xl text-purple-400 mx-auto mb-4" />
-              <h2 className="text-3xl font-bold text-white mb-4">Poemas</h2>
-              <p className="text-zinc-400">Contenido próximamente...</p>
-            </div>
+            <>
+              {selectedPoem === null ? (
+                // Galería de imágenes de poemas
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  {/* Poema 1 - Venganza */}
+                  <button
+                    onClick={() => setSelectedPoem(1)}
+                    className="group relative overflow-hidden rounded-xl border border-purple-500/30 hover:border-purple-500/60 transition-all transform hover:scale-105"
+                  >
+                    <img
+                      src="../public/images/venganza.png"
+                      alt="Venganza"
+                      className="w-full h-auto object-cover"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+                      <h3 className="text-2xl font-bold text-white">Venganza</h3>
+                    </div>
+                  </button>
+
+                  {/* Poema 2 - Placeholder */}
+                  <button
+                    onClick={() => setSelectedPoem(2)}
+                    className="group relative overflow-hidden rounded-xl border border-pink-500/30 hover:border-pink-500/60 transition-all transform hover:scale-105"
+                  >
+                    <div className="w-full aspect-square bg-gradient-to-br from-pink-900/20 to-purple-900/20 flex items-center justify-center">
+                      <div className="text-center">
+                        <HiSparkles className="text-6xl text-pink-400 mx-auto mb-4" />
+                        <p className="text-zinc-400">Imagen próximamente</p>
+                      </div>
+                    </div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+                      <h3 className="text-2xl font-bold text-white">Poema 2</h3>
+                    </div>
+                  </button>
+
+                  {/* Poema 3 - Placeholder */}
+                  <button
+                    onClick={() => setSelectedPoem(3)}
+                    className="group relative overflow-hidden rounded-xl border border-purple-500/30 hover:border-purple-500/60 transition-all transform hover:scale-105"
+                  >
+                    <div className="w-full aspect-square bg-gradient-to-br from-purple-900/20 to-pink-900/20 flex items-center justify-center">
+                      <div className="text-center">
+                        <HiSparkles className="text-6xl text-purple-400 mx-auto mb-4" />
+                        <p className="text-zinc-400">Imagen próximamente</p>
+                      </div>
+                    </div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+                      <h3 className="text-2xl font-bold text-white">Poema 3</h3>
+                    </div>
+                  </button>
+
+                  {/* Poema 4 - Placeholder */}
+                  <button
+                    onClick={() => setSelectedPoem(4)}
+                    className="group relative overflow-hidden rounded-xl border border-pink-500/30 hover:border-pink-500/60 transition-all transform hover:scale-105"
+                  >
+                    <div className="w-full aspect-square bg-gradient-to-br from-pink-900/20 to-purple-900/20 flex items-center justify-center">
+                      <div className="text-center">
+                        <HiSparkles className="text-6xl text-pink-400 mx-auto mb-4" />
+                        <p className="text-zinc-400">Imagen próximamente</p>
+                      </div>
+                    </div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+                      <h3 className="text-2xl font-bold text-white">Poema 4</h3>
+                    </div>
+                  </button>
+                </div>
+              ) : (
+                // Vista de poema individual
+                <div className="space-y-6">
+                  <button
+                    onClick={() => setSelectedPoem(null)}
+                    className="flex items-center gap-2 text-purple-400 hover:text-purple-300 transition-colors"
+                  >
+                    <HiArrowLeft className="text-xl" />
+                    <span>Volver a la galería</span>
+                  </button>
+
+                  {selectedPoem === 1 && (
+                    <div className="border border-purple-500/30 rounded-xl p-8 bg-gradient-to-br from-purple-900/20 to-pink-900/20 backdrop-blur-sm">
+                      <h3 className="text-3xl font-bold text-purple-300 mb-6 text-center">
+                        Venganza
+                      </h3>
+                      <div className="text-zinc-300 leading-relaxed whitespace-pre-line">
+{`Hoy me doy el lujo de ser hiriente
+                De reventar tu cara de serpiente
+                Fuí tan inocente, te entregué mi corazón
+                Y con hambre dijiste “no es suficiente”
+
+                Yo como putita obediente
+                mientras penetraba tu veneno 
+                en mi cuerpo y mi mente,
+                Y de repente
+                me convertí en suicida dependiente
+
+                cada día con vos, pesadilla recurrente
+                Ahí entendí, morir es distinto
+                que dormir para siempre.
+                “Qué ocurrente. Estás exagerando ¿Sos consciente?”
+
+                ¡NO! ¡NO EXAGERO!
+                Es que soy una pésima poetisa
+                Y no encuentra mi lengua la palabra precisa
+                Y vos, bicho rastrero, falso caballero
+
+                Te deje entrar por puro desespero
+                Ahora, como buena sacerdotisa
+                rezo y espero
+                que tu hueso se rompa contra el acero
+                que tus tripas sirvan de sombrero
+                ¡Por favor Diosa, cumplime mi deseo!
+
+                Nada. Otra plegaria omisa.
+                Sólo droga en la repisa,
+                una soga en la cornisa
+                mi boca se ahoga con sonrisa
+                me entrego a la muerte, sumisa
+
+                siento la brisa
+                una luz que brilla
+                leo el futuro que pasa deprisa
+                Me roza el flechazo de Artemisa
+                El nudo de mi cuello se desliza
+                Caigo de rodillas con la mano en las costillas
+                Histérica me cago de risa
+
+                Desde ese día planeo mi venganza
+                cagar en tu tumba, con eso me alcanza
+                danzar una macumba descalza, 
+                por fin mi mente en paz descansa
+                En cambio vos, larva
+                Ni muero vas a tener esperanza
+                porque mientras yo respire, 
+                vas a querer ojos en la espalda
+                Vas a escuchar mis carcajadas perreando en minifalda
+                Vestida de negro esmeralda, bruja malvada
+                Así que corré, con la cola entre las patas
+                Andá, andá…
+                Si nunca te importó dejarme abandonada
+                Andá antes que saque filo a mi espada,
+                esa que recorrió tu cuerpo y chupó tu daga 
+                Ojalá te encuentre borracho en la madrugada
+                sin los muchachos, tu cara quebrada, 
+                mi sonrisa con tu sangre pintada
+                ¿Sigo siendo exagerada? 
+                Yo camino como si no me importara
+                Si no me crees, creele a mis ojos
+                Que te miran, pero ya no ven nada.`}
+                      </div>
+                    </div>
+                  )}
+
+                  {selectedPoem === 2 && (
+                    <div className="border border-pink-500/30 rounded-xl p-8 bg-gradient-to-br from-pink-900/20 to-purple-900/20 backdrop-blur-sm">
+                      <h3 className="text-3xl font-bold text-pink-300 mb-6 text-center">
+                        {/* Título del Poema 2 */}
+                      </h3>
+                      <div className="text-zinc-300 leading-relaxed whitespace-pre-line">
+                        {/* Contenido del Poema 2 */}
+                      </div>
+                    </div>
+                  )}
+
+                  {selectedPoem === 3 && (
+                    <div className="border border-purple-500/30 rounded-xl p-8 bg-gradient-to-br from-purple-900/20 to-pink-900/20 backdrop-blur-sm">
+                      <h3 className="text-3xl font-bold text-purple-300 mb-6 text-center">
+                        {/* Título del Poema 3 */}
+                      </h3>
+                      <div className="text-zinc-300 leading-relaxed whitespace-pre-line">
+                        {/* Contenido del Poema 3 */}
+                      </div>
+                    </div>
+                  )}
+
+                  {selectedPoem === 4 && (
+                    <div className="border border-pink-500/30 rounded-xl p-8 bg-gradient-to-br from-pink-900/20 to-purple-900/20 backdrop-blur-sm">
+                      <h3 className="text-3xl font-bold text-pink-300 mb-6 text-center">
+                        {/* Título del Poema 4 */}
+                      </h3>
+                      <div className="text-zinc-300 leading-relaxed whitespace-pre-line">
+                        {/* Contenido del Poema 4 */}
+                      </div>
+                    </div>
+                  )}
+                </div>
+              )}
+            </>
           )}
 
           {activeTab === 'stories' && (
@@ -172,7 +398,9 @@ export default function Creative() {
             </div>
           )}
         </div>
+      
+        </div>
       </div>
-    </div>
+    </>
   )
 }
