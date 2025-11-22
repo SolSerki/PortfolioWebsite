@@ -187,7 +187,7 @@ export default function Creative() {
                     className="group relative overflow-hidden rounded-xl border border-purple-500/30 hover:border-purple-500/60 transition-all transform hover:scale-105"
                   >
                     <img
-                      src="../public/images/venganza.png"
+                      src="/images/Venganza.png"
                       alt="Venganza"
                       className="w-full h-auto object-cover"
                     />
