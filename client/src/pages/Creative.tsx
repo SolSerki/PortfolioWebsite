@@ -6,7 +6,20 @@ import FrameAntique from '../svg/FrameAntique.svg?react'
 import FlowerIcon from '../svg/FlowerIcon.svg?react';
 import SplashCursor from '../components/SplashCursor';
 import { GiBodyHeight } from 'react-icons/gi';
+import Venganza from '../components/poems/Venganza';
+import Poem2 from '../components/poems/Kaze';
+import Poem3 from '../components/poems/Tumbas';
+import Poem4 from '../components/poems/HattoriHanzo';
+import Trama from '../components/writing-resources/Trama';
+import Ambientacion from '../components/writing-resources/Ambientacion';
+import Personajes from '../components/writing-resources/Personajes';
+import Worldbuilding from '../components/writing-resources/Worldbuilding';
+import SistemasMagia from '../components/writing-resources/SistemasMagia';
+import TarotReading from '../components/TarotReading';
+import { BentoCardProps } from '../components/MagicBento';
+
 type CreativeTab = 'poems' | 'stories' | 'writing-resources' | 'tarot' | 'knights-witches'
+type WritingResourceTab = 'trama' | 'ambientacion' | 'personajes' | 'worldbuilding' | 'sistemas-magia'
 
 export default function Creative() {
   const { t } = useLanguage()
@@ -16,6 +29,7 @@ export default function Creative() {
   const [activeTab, setActiveTab] = useState<CreativeTab>('poems')
   const [selectedPoem, setSelectedPoem] = useState<number | null>(null)
   const [isCursorEnabled, setIsCursorEnabled] = useState(true)
+  const [writingResourceTab, setWritingResourceTab] = useState<WritingResourceTab>('trama')
 
   const handlePasswordSubmit = (e: React.FormEvent) => {
     e.preventDefault()
@@ -34,6 +48,38 @@ export default function Creative() {
     { id: 'writing-resources' as CreativeTab, label: 'Recursos de Escritura', icon: HiPencil },
     { id: 'tarot' as CreativeTab, label: 'Tarot', icon: HiStar },
     { id: 'knights-witches' as CreativeTab, label: 'Knights & Witches', icon: HiShieldCheck }
+  ]
+
+  // Datos de ejemplo para BentoCards
+  const tramaCards: BentoCardProps[] = [
+    { color: '#060010', title: 'Estructura de Tres Actos', description: 'Guía básica de estructura narrativa', label: 'Trama' },
+    { color: '#060010', title: 'El Viaje del Héroe', description: 'Monomito de Joseph Campbell', label: 'Trama' },
+    { color: '#060010', title: 'Giros de Trama', description: 'Cómo crear plot twists efectivos', label: 'Trama' },
+    { color: '#060010', title: 'Conflicto y Tensión', description: 'Mantener la tensión narrativa', label: 'Trama' }
+  ]
+
+  const ambientacionCards: BentoCardProps[] = [
+    { color: '#060010', title: 'Worldbuilding', description: 'Construyendo mundos creíbles', label: 'Ambientación' },
+    { color: '#060010', title: 'Descripción Sensorial', description: 'Usar los cinco sentidos', label: 'Ambientación' },
+    { color: '#060010', title: 'Atmósfera', description: 'Crear el mood correcto', label: 'Ambientación' }
+  ]
+
+  const personajesCards: BentoCardProps[] = [
+    { color: '#060010', title: 'Desarrollo de Personajes', description: 'Crear personajes tridimensionales', label: 'Personajes' },
+    { color: '#060010', title: 'Arquetipos', description: 'Uso de arquetipos narrativos', label: 'Personajes' },
+    { color: '#060010', title: 'Diálogos', description: 'Escribir diálogos naturales', label: 'Personajes' }
+  ]
+
+  const worldbuildingCards: BentoCardProps[] = [
+    { color: '#060010', title: 'Sistemas Políticos', description: 'Estructuras de poder', label: 'Worldbuilding' },
+    { color: '#060010', title: 'Economía', description: 'Sistemas económicos del mundo', label: 'Worldbuilding' },
+    { color: '#060010', title: 'Cultura', description: 'Tradiciones y costumbres', label: 'Worldbuilding' }
+  ]
+
+  const sistemasMagiaCards: BentoCardProps[] = [
+    { color: '#060010', title: 'Magia Dura vs Blanda', description: 'Sistemas de magia definidos', label: 'Magia' },
+    { color: '#060010', title: 'Costos y Limitaciones', description: 'Balancear el poder mágico', label: 'Magia' },
+    { color: '#060010', title: 'Fuentes de Magia', description: 'De dónde viene el poder', label: 'Magia' }
   ]
 
   if (!isUnlocked) {
@@ -187,7 +233,7 @@ export default function Creative() {
                     className="group relative overflow-hidden rounded-xl border border-purple-500/30 hover:border-purple-500/60 transition-all transform hover:scale-105"
                   >
                     <img
-                      src="/images/Venganza.png"
+                      src="/images/poems/Venganza.png"
                       alt="Venganza"
                       className="w-full h-auto object-cover"
                     />
@@ -196,51 +242,48 @@ export default function Creative() {
                     </div>
                   </button>
 
-                  {/* Poema 2 - Placeholder */}
+                  {/* Poema 2 - Kaze */}
                   <button
                     onClick={() => setSelectedPoem(2)}
                     className="group relative overflow-hidden rounded-xl border border-pink-500/30 hover:border-pink-500/60 transition-all transform hover:scale-105"
                   >
-                    <div className="w-full aspect-square bg-gradient-to-br from-pink-900/20 to-purple-900/20 flex items-center justify-center">
-                      <div className="text-center">
-                        <HiSparkles className="text-6xl text-pink-400 mx-auto mb-4" />
-                        <p className="text-zinc-400">Imagen próximamente</p>
-                      </div>
-                    </div>
+                    <img
+                      src="/images/poems/Kaze.png"
+                      alt="Kaze"
+                      className="w-full h-auto object-cover"
+                    />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
-                      <h3 className="text-2xl font-bold text-white">Poema 2</h3>
+                      <h3 className="text-2xl font-bold text-white">Kaze</h3>
                     </div>
                   </button>
 
-                  {/* Poema 3 - Placeholder */}
+                  {/* Tumbas */}
                   <button
                     onClick={() => setSelectedPoem(3)}
                     className="group relative overflow-hidden rounded-xl border border-purple-500/30 hover:border-purple-500/60 transition-all transform hover:scale-105"
                   >
-                    <div className="w-full aspect-square bg-gradient-to-br from-purple-900/20 to-pink-900/20 flex items-center justify-center">
-                      <div className="text-center">
-                        <HiSparkles className="text-6xl text-purple-400 mx-auto mb-4" />
-                        <p className="text-zinc-400">Imagen próximamente</p>
-                      </div>
-                    </div>
+                    <img
+                      src="/images/poems/Tumbas.png"
+                      alt="Tumbas"
+                      className="w-full h-auto object-cover"
+                    />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
-                      <h3 className="text-2xl font-bold text-white">Poema 3</h3>
+                      <h3 className="text-2xl font-bold text-white">Tumbas</h3>
                     </div>
                   </button>
 
-                  {/* Poema 4 - Placeholder */}
+                  {/* Hattori Hanzo */}
                   <button
                     onClick={() => setSelectedPoem(4)}
                     className="group relative overflow-hidden rounded-xl border border-pink-500/30 hover:border-pink-500/60 transition-all transform hover:scale-105"
                   >
-                    <div className="w-full aspect-square bg-gradient-to-br from-pink-900/20 to-purple-900/20 flex items-center justify-center">
-                      <div className="text-center">
-                        <HiSparkles className="text-6xl text-pink-400 mx-auto mb-4" />
-                        <p className="text-zinc-400">Imagen próximamente</p>
-                      </div>
-                    </div>
+                    <img
+                      src="/images/poems/Hattori Hanzo.png"
+                      alt="Hattori Hanzo"
+                      className="w-full h-auto object-cover"
+                    />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
-                      <h3 className="text-2xl font-bold text-white">Poema 4</h3>
+                      <h3 className="text-2xl font-bold text-white">Hattori Hanzo</h3>
                     </div>
                   </button>
                 </div>
@@ -255,112 +298,13 @@ export default function Creative() {
                     <span>Volver a la galería</span>
                   </button>
 
-                  {selectedPoem === 1 && (
-                    <div className="border border-purple-500/30 rounded-xl p-8 bg-gradient-to-br from-purple-900/20 to-pink-900/20 backdrop-blur-sm">
-                      <h3 className="text-3xl font-bold text-purple-300 mb-6 text-center">
-                        Venganza
-                      </h3>
-                      <div className="text-zinc-300 leading-relaxed whitespace-pre-line">
-{`Hoy me doy el lujo de ser hiriente
-                De reventar tu cara de serpiente
-                Fuí tan inocente, te entregué mi corazón
-                Y con hambre dijiste “no es suficiente”
+                  {selectedPoem === 1 && <Venganza />}
 
-                Yo como putita obediente
-                mientras penetraba tu veneno 
-                en mi cuerpo y mi mente,
-                Y de repente
-                me convertí en suicida dependiente
+                  {selectedPoem === 2 && <Poem2 />}
 
-                cada día con vos, pesadilla recurrente
-                Ahí entendí, morir es distinto
-                que dormir para siempre.
-                “Qué ocurrente. Estás exagerando ¿Sos consciente?”
+                  {selectedPoem === 3 && <Poem3 />}
 
-                ¡NO! ¡NO EXAGERO!
-                Es que soy una pésima poetisa
-                Y no encuentra mi lengua la palabra precisa
-                Y vos, bicho rastrero, falso caballero
-
-                Te deje entrar por puro desespero
-                Ahora, como buena sacerdotisa
-                rezo y espero
-                que tu hueso se rompa contra el acero
-                que tus tripas sirvan de sombrero
-                ¡Por favor Diosa, cumplime mi deseo!
-
-                Nada. Otra plegaria omisa.
-                Sólo droga en la repisa,
-                una soga en la cornisa
-                mi boca se ahoga con sonrisa
-                me entrego a la muerte, sumisa
-
-                siento la brisa
-                una luz que brilla
-                leo el futuro que pasa deprisa
-                Me roza el flechazo de Artemisa
-                El nudo de mi cuello se desliza
-                Caigo de rodillas con la mano en las costillas
-                Histérica me cago de risa
-
-                Desde ese día planeo mi venganza
-                cagar en tu tumba, con eso me alcanza
-                danzar una macumba descalza, 
-                por fin mi mente en paz descansa
-                En cambio vos, larva
-                Ni muero vas a tener esperanza
-                porque mientras yo respire, 
-                vas a querer ojos en la espalda
-                Vas a escuchar mis carcajadas perreando en minifalda
-                Vestida de negro esmeralda, bruja malvada
-                Así que corré, con la cola entre las patas
-                Andá, andá…
-                Si nunca te importó dejarme abandonada
-                Andá antes que saque filo a mi espada,
-                esa que recorrió tu cuerpo y chupó tu daga 
-                Ojalá te encuentre borracho en la madrugada
-                sin los muchachos, tu cara quebrada, 
-                mi sonrisa con tu sangre pintada
-                ¿Sigo siendo exagerada? 
-                Yo camino como si no me importara
-                Si no me crees, creele a mis ojos
-                Que te miran, pero ya no ven nada.`}
-                      </div>
-                    </div>
-                  )}
-
-                  {selectedPoem === 2 && (
-                    <div className="border border-pink-500/30 rounded-xl p-8 bg-gradient-to-br from-pink-900/20 to-purple-900/20 backdrop-blur-sm">
-                      <h3 className="text-3xl font-bold text-pink-300 mb-6 text-center">
-                        {/* Título del Poema 2 */}
-                      </h3>
-                      <div className="text-zinc-300 leading-relaxed whitespace-pre-line">
-                        {/* Contenido del Poema 2 */}
-                      </div>
-                    </div>
-                  )}
-
-                  {selectedPoem === 3 && (
-                    <div className="border border-purple-500/30 rounded-xl p-8 bg-gradient-to-br from-purple-900/20 to-pink-900/20 backdrop-blur-sm">
-                      <h3 className="text-3xl font-bold text-purple-300 mb-6 text-center">
-                        {/* Título del Poema 3 */}
-                      </h3>
-                      <div className="text-zinc-300 leading-relaxed whitespace-pre-line">
-                        {/* Contenido del Poema 3 */}
-                      </div>
-                    </div>
-                  )}
-
-                  {selectedPoem === 4 && (
-                    <div className="border border-pink-500/30 rounded-xl p-8 bg-gradient-to-br from-pink-900/20 to-purple-900/20 backdrop-blur-sm">
-                      <h3 className="text-3xl font-bold text-pink-300 mb-6 text-center">
-                        {/* Título del Poema 4 */}
-                      </h3>
-                      <div className="text-zinc-300 leading-relaxed whitespace-pre-line">
-                        {/* Contenido del Poema 4 */}
-                      </div>
-                    </div>
-                  )}
+                  {selectedPoem === 4 && <Poem4 />}
                 </div>
               )}
             </>
@@ -374,21 +318,51 @@ export default function Creative() {
             </div>
           )}
 
-          {activeTab === 'writing-resources' && (
+          {activeTab === 'stories' && (
             <div className="text-center py-20">
-              <HiPencil className="text-6xl text-purple-400 mx-auto mb-4" />
-              <h2 className="text-3xl font-bold text-white mb-4">Recursos de Escritura</h2>
+              <HiBookOpen className="text-6xl text-pink-400 mx-auto mb-4" />
+              <h2 className="text-3xl font-bold text-white mb-4">Historias Cortas</h2>
               <p className="text-zinc-400">Contenido próximamente...</p>
             </div>
           )}
 
-          {activeTab === 'tarot' && (
-            <div className="text-center py-20">
-              <HiStar className="text-6xl text-amber-400 mx-auto mb-4" />
-              <h2 className="text-3xl font-bold text-white mb-4">Tarot</h2>
-              <p className="text-zinc-400">Contenido próximamente...</p>
+          {activeTab === 'writing-resources' && (
+            <div className="space-y-8">
+              {/* Sub-navegación para Recursos de Escritura */}
+              <div className="flex flex-wrap justify-center gap-2">
+                {[
+                  { id: 'trama' as WritingResourceTab, label: 'Trama' },
+                  { id: 'ambientacion' as WritingResourceTab, label: 'Ambientación' },
+                  { id: 'personajes' as WritingResourceTab, label: 'Personajes' },
+                  { id: 'worldbuilding' as WritingResourceTab, label: 'Worldbuilding' },
+                  { id: 'sistemas-magia' as WritingResourceTab, label: 'Sistemas de Magia' }
+                ].map((subTab) => (
+                  <button
+                    key={subTab.id}
+                    onClick={() => setWritingResourceTab(subTab.id)}
+                    className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
+                      writingResourceTab === subTab.id
+                        ? 'bg-purple-600 text-white'
+                        : 'bg-zinc-800/50 text-zinc-400 hover:text-white hover:bg-zinc-700/50'
+                    }`}
+                  >
+                    {subTab.label}
+                  </button>
+                ))}
+              </div>
+
+              {/* Contenido de sub-sección */}
+              <div>
+                {writingResourceTab === 'trama' && <Trama cards={tramaCards} />}
+                {writingResourceTab === 'ambientacion' && <Ambientacion cards={ambientacionCards} />}
+                {writingResourceTab === 'personajes' && <Personajes cards={personajesCards} />}
+                {writingResourceTab === 'worldbuilding' && <Worldbuilding cards={worldbuildingCards} />}
+                {writingResourceTab === 'sistemas-magia' && <SistemasMagia cards={sistemasMagiaCards} />}
+              </div>
             </div>
           )}
+
+          {activeTab === 'tarot' && <TarotReading />}
 
           {activeTab === 'knights-witches' && (
             <div className="text-center py-20">
