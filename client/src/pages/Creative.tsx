@@ -7,15 +7,20 @@ import FlowerIcon from '../svg/FlowerIcon.svg?react';
 import SplashCursor from '../components/SplashCursor';
 import { GiBodyHeight } from 'react-icons/gi';
 import Venganza from '../components/poems/Venganza';
-import Poem2 from '../components/poems/Kaze';
-import Poem3 from '../components/poems/Tumbas';
-import Poem4 from '../components/poems/HattoriHanzo';
+import Kaze from '../components/poems/Kaze';
+import Tumbas from '../components/poems/Tumbas';
+import HattoriHanzo from '../components/poems/HattoriHanzo';
+import Cuartitoscuro from '../components/stories/Cuartitoscuro';
+import Story2 from '../components/stories/Story2';
+import Story3 from '../components/stories/Story3';
+import Story4 from '../components/stories/Story4';
 import Trama from '../components/writing-resources/Trama';
 import Ambientacion from '../components/writing-resources/Ambientacion';
 import Personajes from '../components/writing-resources/Personajes';
 import Worldbuilding from '../components/writing-resources/Worldbuilding';
 import SistemasMagia from '../components/writing-resources/SistemasMagia';
 import TarotReading from '../components/TarotReading';
+import KnightsWitches from '../components/knights-witches/KnightsWitches';
 import { BentoCardProps } from '../components/MagicBento';
 
 type CreativeTab = 'poems' | 'stories' | 'writing-resources' | 'tarot' | 'knights-witches'
@@ -28,6 +33,7 @@ export default function Creative() {
   const [error, setError] = useState(false)
   const [activeTab, setActiveTab] = useState<CreativeTab>('poems')
   const [selectedPoem, setSelectedPoem] = useState<number | null>(null)
+  const [selectedStory, setSelectedStory] = useState<number | null>(null)
   const [isCursorEnabled, setIsCursorEnabled] = useState(true)
   const [writingResourceTab, setWritingResourceTab] = useState<WritingResourceTab>('trama')
 
@@ -207,6 +213,9 @@ export default function Creative() {
                 if (tab.id === 'poems') {
                   setSelectedPoem(null)
                 }
+                if (tab.id === 'stories') {
+                  setSelectedStory(null)
+                }
               }}
               className={`flex items-center gap-2 px-6 py-3 rounded-xl font-medium transition-all ${
                 activeTab === tab.id
@@ -300,30 +309,96 @@ export default function Creative() {
 
                   {selectedPoem === 1 && <Venganza />}
 
-                  {selectedPoem === 2 && <Poem2 />}
+                  {selectedPoem === 2 && <Kaze />}
 
-                  {selectedPoem === 3 && <Poem3 />}
+                  {selectedPoem === 3 && <Tumbas />}
 
-                  {selectedPoem === 4 && <Poem4 />}
+                  {selectedPoem === 4 && <HattoriHanzo />}
                 </div>
               )}
             </>
           )}
 
           {activeTab === 'stories' && (
-            <div className="text-center py-20">
-              <HiBookOpen className="text-6xl text-pink-400 mx-auto mb-4" />
-              <h2 className="text-3xl font-bold text-white mb-4">Historias Cortas</h2>
-              <p className="text-zinc-400">Contenido próximamente...</p>
-            </div>
-          )}
+            <>
+              {selectedStory === null ? (
+                // Galería de imágenes de historias cortas
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  {/* Historia 1 */}
+                  <button
+                    onClick={() => setSelectedStory(1)}
+                    className="group relative overflow-hidden rounded-xl border border-pink-500/30 hover:border-pink-500/60 transition-all transform hover:scale-105"
+                  >
+                    <img
+                      src="/images/stories/Cuartito Oscuro.png"
+                      alt="Cuartito Oscuro"
+                      className="w-full h-auto object-cover"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+                      <h3 className="text-2xl font-bold text-white">Cuartito Oscuro</h3>
+                    </div>
+                  </button>
 
-          {activeTab === 'stories' && (
-            <div className="text-center py-20">
-              <HiBookOpen className="text-6xl text-pink-400 mx-auto mb-4" />
-              <h2 className="text-3xl font-bold text-white mb-4">Historias Cortas</h2>
-              <p className="text-zinc-400">Contenido próximamente...</p>
-            </div>
+                  {/* Historia 2 */}
+                  <button
+                    onClick={() => setSelectedStory(2)}
+                    className="group relative overflow-hidden rounded-xl border border-purple-500/30 hover:border-purple-500/60 transition-all transform hover:scale-105"
+                  >
+                    <div className="w-full aspect-[4/3] bg-gradient-to-br from-purple-900/40 to-pink-900/40 flex items-center justify-center">
+                      <span className="text-4xl text-purple-300/30">Historia 2</span>
+                    </div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+                      <h3 className="text-2xl font-bold text-white">Título 2</h3>
+                    </div>
+                  </button>
+
+                  {/* Historia 3 */}
+                  <button
+                    onClick={() => setSelectedStory(3)}
+                    className="group relative overflow-hidden rounded-xl border border-pink-500/30 hover:border-pink-500/60 transition-all transform hover:scale-105"
+                  >
+                    <div className="w-full aspect-[4/3] bg-gradient-to-br from-pink-900/40 to-purple-900/40 flex items-center justify-center">
+                      <span className="text-4xl text-pink-300/30">Historia 3</span>
+                    </div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+                      <h3 className="text-2xl font-bold text-white">Título 3</h3>
+                    </div>
+                  </button>
+
+                  {/* Historia 4 */}
+                  <button
+                    onClick={() => setSelectedStory(4)}
+                    className="group relative overflow-hidden rounded-xl border border-purple-500/30 hover:border-purple-500/60 transition-all transform hover:scale-105"
+                  >
+                    <div className="w-full aspect-[4/3] bg-gradient-to-br from-purple-900/40 to-pink-900/40 flex items-center justify-center">
+                      <span className="text-4xl text-purple-300/30">Historia 4</span>
+                    </div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+                      <h3 className="text-2xl font-bold text-white">Título 4</h3>
+                    </div>
+                  </button>
+                </div>
+              ) : (
+                // Vista de historia individual
+                <div className="space-y-6">
+                  <button
+                    onClick={() => setSelectedStory(null)}
+                    className="flex items-center gap-2 text-pink-400 hover:text-pink-300 transition-colors"
+                  >
+                    <HiArrowLeft className="text-xl" />
+                    <span>Volver a la galería</span>
+                  </button>
+
+                  {selectedStory === 1 && <Cuartitoscuro />}
+
+                  {selectedStory === 2 && <Story2 />}
+
+                  {selectedStory === 3 && <Story3 />}
+
+                  {selectedStory === 4 && <Story4 />}
+                </div>
+              )}
+            </>
           )}
 
           {activeTab === 'writing-resources' && (
@@ -364,13 +439,7 @@ export default function Creative() {
 
           {activeTab === 'tarot' && <TarotReading />}
 
-          {activeTab === 'knights-witches' && (
-            <div className="text-center py-20">
-              <HiShieldCheck className="text-6xl text-emerald-400 mx-auto mb-4" />
-              <h2 className="text-3xl font-bold text-white mb-4">Knights & Witches</h2>
-              <p className="text-zinc-400">Contenido próximamente...</p>
-            </div>
-          )}
+          {activeTab === 'knights-witches' && <KnightsWitches />}
         </div>
       
         </div>
