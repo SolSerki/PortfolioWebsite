@@ -19,7 +19,7 @@ import Ambientacion from '../components/writing-resources/Ambientacion';
 import Personajes from '../components/writing-resources/Personajes';
 import Worldbuilding from '../components/writing-resources/Worldbuilding';
 import SistemasMagia from '../components/writing-resources/SistemasMagia';
-import TarotReading from '../components/TarotReading';
+import TarotSelector from '../components/TarotSelector';
 import KnightsWitches from '../components/knights-witches/KnightsWitches';
 import { BentoCardProps } from '../components/MagicBento';
 
@@ -437,7 +437,7 @@ export default function Creative() {
             </div>
           )}
 
-          {activeTab === 'tarot' && <TarotReading />}
+          {activeTab === 'tarot' && <TarotSelector />}
 
           {activeTab === 'knights-witches' && <KnightsWitches />}
         </div>
