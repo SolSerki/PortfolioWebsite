@@ -21,7 +21,6 @@ import Worldbuilding from '../components/writing-resources/Worldbuilding';
 import SistemasMagia from '../components/writing-resources/SistemasMagia';
 import TarotSelector from '../components/TarotSelector';
 import KnightsWitches from '../components/knights-witches/KnightsWitches';
-import { BentoCardProps } from '../components/MagicBento';
 
 type CreativeTab = 'poems' | 'stories' | 'writing-resources' | 'tarot' | 'knights-witches'
 type WritingResourceTab = 'trama' | 'ambientacion' | 'personajes' | 'worldbuilding' | 'sistemas-magia'
@@ -54,38 +53,6 @@ export default function Creative() {
     { id: 'writing-resources' as CreativeTab, label: 'Recursos de Escritura', icon: HiPencil },
     { id: 'tarot' as CreativeTab, label: 'Tarot', icon: HiStar },
     { id: 'knights-witches' as CreativeTab, label: 'Knights & Witches', icon: HiShieldCheck }
-  ]
-
-  // Datos de ejemplo para BentoCards
-  const tramaCards: BentoCardProps[] = [
-    { color: '#060010', title: 'Estructura de Tres Actos', description: 'Guía básica de estructura narrativa', label: 'Trama' },
-    { color: '#060010', title: 'El Viaje del Héroe', description: 'Monomito de Joseph Campbell', label: 'Trama' },
-    { color: '#060010', title: 'Giros de Trama', description: 'Cómo crear plot twists efectivos', label: 'Trama' },
-    { color: '#060010', title: 'Conflicto y Tensión', description: 'Mantener la tensión narrativa', label: 'Trama' }
-  ]
-
-  const ambientacionCards: BentoCardProps[] = [
-    { color: '#060010', title: 'Worldbuilding', description: 'Construyendo mundos creíbles', label: 'Ambientación' },
-    { color: '#060010', title: 'Descripción Sensorial', description: 'Usar los cinco sentidos', label: 'Ambientación' },
-    { color: '#060010', title: 'Atmósfera', description: 'Crear el mood correcto', label: 'Ambientación' }
-  ]
-
-  const personajesCards: BentoCardProps[] = [
-    { color: '#060010', title: 'Desarrollo de Personajes', description: 'Crear personajes tridimensionales', label: 'Personajes' },
-    { color: '#060010', title: 'Arquetipos', description: 'Uso de arquetipos narrativos', label: 'Personajes' },
-    { color: '#060010', title: 'Diálogos', description: 'Escribir diálogos naturales', label: 'Personajes' }
-  ]
-
-  const worldbuildingCards: BentoCardProps[] = [
-    { color: '#060010', title: 'Sistemas Políticos', description: 'Estructuras de poder', label: 'Worldbuilding' },
-    { color: '#060010', title: 'Economía', description: 'Sistemas económicos del mundo', label: 'Worldbuilding' },
-    { color: '#060010', title: 'Cultura', description: 'Tradiciones y costumbres', label: 'Worldbuilding' }
-  ]
-
-  const sistemasMagiaCards: BentoCardProps[] = [
-    { color: '#060010', title: 'Magia Dura vs Blanda', description: 'Sistemas de magia definidos', label: 'Magia' },
-    { color: '#060010', title: 'Costos y Limitaciones', description: 'Balancear el poder mágico', label: 'Magia' },
-    { color: '#060010', title: 'Fuentes de Magia', description: 'De dónde viene el poder', label: 'Magia' }
   ]
 
   if (!isUnlocked) {
@@ -428,11 +395,11 @@ export default function Creative() {
 
               {/* Contenido de sub-sección */}
               <div>
-                {writingResourceTab === 'trama' && <Trama cards={tramaCards} />}
-                {writingResourceTab === 'ambientacion' && <Ambientacion cards={ambientacionCards} />}
-                {writingResourceTab === 'personajes' && <Personajes cards={personajesCards} />}
-                {writingResourceTab === 'worldbuilding' && <Worldbuilding cards={worldbuildingCards} />}
-                {writingResourceTab === 'sistemas-magia' && <SistemasMagia cards={sistemasMagiaCards} />}
+                {writingResourceTab === 'trama' && <Trama />}
+                {writingResourceTab === 'ambientacion' && <Ambientacion />}
+                {writingResourceTab === 'personajes' && <Personajes />}
+                {writingResourceTab === 'worldbuilding' && <Worldbuilding />}
+                {writingResourceTab === 'sistemas-magia' && <SistemasMagia />}
               </div>
             </div>
           )}

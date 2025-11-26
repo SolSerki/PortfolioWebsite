@@ -5,6 +5,10 @@ import { FaBook, FaPen, FaGamepad, FaMusic, FaDiceD20, FaUtensils } from 'react-
 export default function About() {
   const { t } = useLanguage()
 
+  const handleCreativeClick = () => {
+    window.location.href = '/?creative=true'
+  }
+
   return (
     <div className="min-h-screen py-16">
       <div className="mx-auto max-w-5xl px-4">
@@ -110,6 +114,16 @@ export default function About() {
               <h3 className="font-semibold mb-2">{t('about.interests.cooking.title')}</h3>
               <p className="text-sm text-zinc-700 dark:text-zinc-300">{t('about.interests.cooking.description')}</p>
             </div>
+          </div>
+
+          <div className="mt-8 text-center">
+            <button
+              onClick={handleCreativeClick}
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-500 hover:to-pink-500 text-white font-medium transition-all transform hover:scale-105 shadow-lg hover:shadow-purple-500/50"
+            >
+              <HiSparkles className="text-xl" />
+              <span className="transition-language">{t('about.interests.exploreCreative')}</span>
+            </button>
           </div>
         </section>
       </div>

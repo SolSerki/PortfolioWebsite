@@ -58,6 +58,7 @@ type Translations = {
   'about.interests.roleplay.description': string
   'about.interests.cooking.title': string
   'about.interests.cooking.description': string
+  'about.interests.exploreCreative': string
   
   // Services
   'services.title': string
@@ -187,6 +188,7 @@ const translations: Record<Language, Translations> = {
     'about.interests.roleplay.description': 'I\'ve been playing role-play games for over 15 years and have DMed several campaigns.',
     'about.interests.cooking.title': 'Cooking',
     'about.interests.cooking.description': 'Great cook, nothing beats preparing your own delicious meal!',
+    'about.interests.exploreCreative': 'Explore Creative Section',
     
     'services.title': 'Services',
     'services.subtitle': 'What I can help you with',
@@ -309,6 +311,7 @@ const translations: Record<Language, Translations> = {
     'about.interests.roleplay.description': 'Llevo más de 15 años jugando juegos de rol y he dirigido varias campañas como DM.',
     'about.interests.cooking.title': 'Cocina',
     'about.interests.cooking.description': 'Excelente cocinera, ¡nada supera preparar tu propia comida deliciosa!',
+    'about.interests.exploreCreative': 'Explorar Sección Creativa',
     
     'services.title': 'Servicios',
     'services.subtitle': 'En qué puedo (y no puedo) ayudarte',
