@@ -11,8 +11,8 @@ import Kaze from '../components/poems/Kaze';
 import Tumbas from '../components/poems/Tumbas';
 import HattoriHanzo from '../components/poems/HattoriHanzo';
 import Cuartitoscuro from '../components/stories/Cuartitoscuro';
-import Story2 from '../components/stories/Story2';
-import Story3 from '../components/stories/Story3';
+import UptheStairs from '../components/stories/UptheStairs';
+import Entreabierta from '../components/stories/Entreabierta';
 import Story4 from '../components/stories/Story4';
 import Trama from '../components/writing-resources/Trama';
 import Ambientacion from '../components/writing-resources/Ambientacion';
@@ -312,10 +312,10 @@ export default function Creative() {
                     className="group relative overflow-hidden rounded-xl border border-purple-500/30 hover:border-purple-500/60 transition-all transform hover:scale-105"
                   >
                     <div className="w-full aspect-[4/3] bg-gradient-to-br from-purple-900/40 to-pink-900/40 flex items-center justify-center">
-                      <span className="text-4xl text-purple-300/30">Historia 2</span>
+                      <span className="text-4xl text-purple-300/30">Up the Stairs</span>
                     </div>
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
-                      <h3 className="text-2xl font-bold text-white">Título 2</h3>
+                      <h3 className="text-2xl font-bold text-white">Up the Stairs</h3>
                     </div>
                   </button>
 
@@ -325,10 +325,10 @@ export default function Creative() {
                     className="group relative overflow-hidden rounded-xl border border-pink-500/30 hover:border-pink-500/60 transition-all transform hover:scale-105"
                   >
                     <div className="w-full aspect-[4/3] bg-gradient-to-br from-pink-900/40 to-purple-900/40 flex items-center justify-center">
-                      <span className="text-4xl text-pink-300/30">Historia 3</span>
+                      <span className="text-4xl text-pink-300/30">Entreabierta</span>
                     </div>
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
-                      <h3 className="text-2xl font-bold text-white">Título 3</h3>
+                      <h3 className="text-2xl font-bold text-white">Entreabierta</h3>
                     </div>
                   </button>
 
@@ -358,9 +358,9 @@ export default function Creative() {
 
                   {selectedStory === 1 && <Cuartitoscuro />}
 
-                  {selectedStory === 2 && <Story2 />}
+                  {selectedStory === 2 && <UptheStairs />}
 
-                  {selectedStory === 3 && <Story3 />}
+                  {selectedStory === 3 && <Entreabierta />}
 
                   {selectedStory === 4 && <Story4 />}
                 </div>

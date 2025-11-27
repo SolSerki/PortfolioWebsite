@@ -5,8 +5,8 @@ export default function Cuartitoscuro() {
         Cuartito Oscuro
       </h2>
       
-      <div className="text-zinc-300 leading-relaxed whitespace-pre-line">
-{`Pasó mucho tiempo, pero todavía me acuerdo. Fue un sábado nublado y fresco; había estado lloviendo toda la semana y ese día no iba a ser la excepción. 
+      <div className="text-zinc-300 leading-relaxed whitespace-pre-wrap">
+{`         Pasó mucho tiempo, pero todavía me acuerdo. Fue un sábado nublado y fresco; había estado lloviendo toda la semana y ese día no iba a ser la excepción. 
 Yo estaba en casa, dándole vueltas al teléfono y mordiéndome las uñas.
 Se que era sábado porque era el día fijo de nuestro ritual. Todos los sábados religiosamente los papás de Sofi se iban de shopping y ella nos invitaba a su casa a merendar.
 El teléfono sonó y me sobresaltó. Del otro lado la voz de Sofi me dijo:
@@ -23,15 +23,18 @@ Dejé la bici acostada al lado del resto (porque tenía la patita rota) y entram
 
 ***
 
-Apenas pasé el umbral lo sentí, ese aire fresco cargado con olor a naftalina y muebles viejos. Respiré profundo, esa mezcla me traía mucho confort, sentía que era mi lugar en el mundo.
-Tengo que admitir que envidiaba a Sofi, tener semejante palacio para mí sola, con techos altos inalcanzables, habitaciones enormes llenas de muebles, sillones de texturas raras, ventanales adornados con pesadas cortinas viejas y otras nuevas que tapaban por completo la luz.
+         Apenas pasé el umbral lo sentí, ese aire fresco cargado con olor a naftalina y muebles viejos. Respiré profundo, esa mezcla me traía mucho confort, sentía que era mi lugar en el mundo.
+Tengo que admitir que envidiaba a Sofi. Tener semejante palacio para mí sola, con techos altos inalcanzables, habitaciones enormes llenas de muebles, sillones de texturas raras, ventanales adornados con pesadas cortinas viejas y otras nuevas que tapaban por completo la luz.
 El resto de las chicas estaban en el comedor preparando la mesa para la merienda, todas todavía con el uniforme también. Creo que ese día había chocolatada con Oreos. 
-Me miraron y me sonrieron, aunque había algo extraño, parecía una sonrisa cómplice. 
+Me miraron y me sonrieron, aunque había algo extraño. Parecía una sonrisa cómplice. 
 Nos sentamos a hablar sobre cosas que ya no recuerdo, probablemente sobre profesores mala onda, tareas, chicos, padres, moda.
 Una vez que terminamos de ponernos al día con los urgentes dramas adolescentes, dejamos todo en la bacha para que la mucama lo lave a la mañana. 
-Afuera el viento sopló fuerte y un trueno retumbó en la distancia. Era hora del «Cuartito Oscuro».
+Afuera el viento sopló fuerte y un trueno retumbó en la distancia. 
+Era hora del «Cuartito Oscuro».
+
 *** 
-Ya no recuerdo cuando empezó el juego, creo que una de las chicas lo jugaba con los primos cuando volvía a su pueblo, pero una vez que lo probamos nos fascinó, tanto que lo incorporamos a nuestro ritual de los sábados. 
+
+         Ya no recuerdo cuando empezó el juego, creo que una de las chicas lo jugaba con los primos cuando volvía a su pueblo, pero una vez que lo probamos nos fascinó, tanto que lo incorporamos a nuestro ritual de los sábados. 
 Las reglas eran simples, elegíamos una habitación de la casa, una se iba lejos y contaba hasta treinta, mientras el resto se escondía rápido donde podían y apagaban la luz. La de afuera entonces entraba, cerraba la puerta y tenía que encontrarnos a oscuras.
 Con el tiempo desarrollamos tácticas, como mover los muebles para poner obstáculos, o tirar algo al otro lado del cuarto para hacer ruido y despistar a la buscadora.
 Ese día hicimos algunas rondas, jugamos en el living, en la biblioteca y en el cuarto de Sofi.
@@ -44,8 +47,10 @@ Era la adrenalina de esconderse en la oscuridad, en un lugar confinado, mientras
 Cuando terminó la ronda, Sofi y las chicas intercambiaron miradas.
 —Vamos a jugar en otro lado —anunció ella sonriendo—. Encontré la llave del ático.
 Un rayo nos estremeció y empezó a llover torrencialmente.
+
 ***
-Nunca habíamos estado en el ático, estaba prohibido por el papá de Sofi, que había dicho que no era lugar para jugar. Se encontraba en el tercer piso, la trampilla era un rectángulo de madera en el techo con la cerradura y bisagras oxidadas, para subir tuvimos que poner una escalera.
+
+         Nunca habíamos estado en el ático, estaba prohibido por el papá de Sofi, que había dicho que no era lugar para jugar. Se encontraba en el tercer piso, la trampilla era un rectángulo de madera en el techo con la cerradura y bisagras oxidadas, para subir tuvimos que poner una escalera.
 —¿Y si jugamos en otro lado? —dije—. Va a estar todo sucio y lleno de bichos.
 —Ay, no seas cagona  —me dijo Sofi—. Hay que animarse a probar cosas nuevas. —El resto de las chicas asentía en aprobación.
 Yo no estaba muy segura, pero las vi a todas tan sonrientes y entusiasmadas que me armé de valor. No quería quedar como la miedosa del grupo.
@@ -53,9 +58,11 @@ Yo no estaba muy segura, pero las vi a todas tan sonrientes y entusiasmadas que 
 Alivié la vejiga y me lavé la cara para calmarme, el jabón perfumado lavanda me ayudó. Me miré al espejo y pensé: Es sólo esta vuelta. Capaz después nos escondernos juntas con Sofi de nuevo…
 «Está bueno probar cosas nuevas». ¿Qué me quiso decir? No lo entendí bien, pero había algo en esas palabras y en su sonrisa que me llenaban de emoción el pecho.
 Ya había pasado el tiempo de espera. Respiré profundo y subí las escaleras a la oscuridad.
+
 ***
-La negrura era absoluta, no había ventanas ni ranuras, sólo un minúsculo resplandor que se filtraba por los bordes de la trampilla. El repicar de la lluvia contra el techo de tejas era ensordecedor. El aire viciado de encierro olía a humedad y polvo.
-Empecé a caminar despacio, con el corazón en la boca. Los brazos por delante, esperando chocarme con algo en cualquier momento. Mi única referencia era el mínimo resplandor de la trampilla.
+
+         La negrura era absoluta, no había ventanas ni ranuras, sólo un minúsculo resplandor que se filtraba por los bordes de la trampilla. El repicar de la lluvia contra el techo de tejas era ensordecedor. El aire viciado de encierro olía a humedad y polvo.
+Empecé a caminar despacio, con el corazón en la boca y los brazos por delante, esperando chocarme con algo en cualquier momento. Mi única referencia era el mínimo resplandor de la trampilla.
 Pateé algo de madera que sonó hueco y cosas se revolvieron adentro. Tanteé despacio, era una especie de baúl. Sentí que tenía un candado, o sea que nadie podía estar adentro. Lo dejé y seguí buscando.
 Choqué contra algo grande, firme, una viga de madera que sostenía el techo. Había varias de esas en fila. 
 —¿Chicaaaaas? No me gusta esto, ¿podemos jugar en otro lado?
@@ -73,7 +80,9 @@ Escuché que arrastraban la escalera para llevársela ¡Me iban a dejar ahí!
 Caí llorando de rodillas golpeando la trampilla con todas mis fuerzas, levantando tanto polvo que me hizo toser, mi cara era una mezcla de lágrimas, moco y mugre.
 Golpeé, golpeé y golpeé, hasta que la madera crujió debajo de mí y las bisagras se rindieron. Sentí el vértigo de la caída y me cegó la luz del pasillo. Caí de cabeza y mi cuello hizo un horrendo «crack» contra el suelo. 
 Hubo unos segundos de silencio total. Seguido de gritos horrorizados. Lo último que ví fue la cara de Sofi, desencajada de terror.
+
 ***
+
           Desde entonces la mansión se volvió mi hogar y pude ver el revuelo de las siguientes semanas. Una de las pibas recobró la compostura lo suficiente para llamar una ambulancia. 
 Al rato llegaron los padres de Sofia. Después la policía.
 Ella dejó de comer y de dormir. Después del incidente los padres se la llevaron de la casa por unos meses.
@@ -87,11 +96,8 @@ Eventualmente no hubo una próxima familia. Decían que la casa estaba maldita y
 De eso ya hace años, aunque no sabría decir cuántos. Perdí la noción del tiempo, los relojes ya no tienen batería. El moho y la podredumbre hicieron agujeros en el techo. Los pájaros anidaron ahí, y las ratas reclamaron los pisos de abajo. No quedaron muebles, y las enormes ventanas están rotas por piedrazos. Las enredaderas se comen las paredes exteriores mientras que el pasto brasilero parece una jungla. Las rejas y el portón están completamente oxidados.
 No puedo irme, lo intenté muchas veces, pero no puedo. No sé qué tengo que hacer para seguir mi camino. 
 A veces me pregunto, ¿qué pasará cuando las termitas terminen su festín de madera podrida?
-
 Cuando las paredes y techos se desmoronen y la mansión se derrumbe. 
-
 Cuando los humanos se extingan y la naturaleza reclame de nuevo el mundo.
-
 Ese día… ¿Qué será de nosotros los que quedamos atrás?
 `}
       </div>
