@@ -19,7 +19,7 @@ export default function Services() {
 
   const servicesIDoCards: BentoCardProps[] = [
     {
-      color: '#340052ff',
+      color: '#000000ff',
       label: <h3 className="font-semibold text-lg mb-2 transition-language">{t('services.webApps')}</h3>,
       colspan: 2,
       rowspan: 1,
@@ -33,7 +33,7 @@ export default function Services() {
       )
     },
     {
-      color: '#340052ff',
+      color: '#000000ff',
       label: <h3 className="font-semibold text-lg mb-2 transition-language">{t('services.dashboards')}</h3>,
       colspan: 2,
       rowspan: 1,
@@ -47,7 +47,7 @@ export default function Services() {
       )
     },
     {
-      color: '#340052ff',
+      color: '#000000ff',
       label: <h3 className="font-semibold text-lg mb-2 transition-language">{t('services.mobileApps')}</h3>,
       colspan: 2,
       rowspan: 1,
@@ -61,7 +61,7 @@ export default function Services() {
       )
     },
     {
-      color: '#340052ff',
+      color: '#000000ff',
       label: <h3 className="font-semibold text-lg mb-2 transition-language">{t('services.saas')}</h3>,
       colspan: 2,
       rowspan: 1,
@@ -75,7 +75,7 @@ export default function Services() {
       )
     },
     {
-      color: '#340052ff',
+      color: '#000000ff',
       label: <h3 className="font-semibold text-lg mb-2 transition-language">{t('services.portfolios')}</h3>,
       colspan: 2,
       rowspan: 1,
@@ -89,7 +89,7 @@ export default function Services() {
       )
     },
     {
-      color: '#340052ff',
+      color: '#000000ff',
       label: <h3 className="font-semibold text-lg mb-2 transition-language">{t('services.backend')}</h3>,
       colspan: 2,
       rowspan: 1,
@@ -132,7 +132,7 @@ export default function Services() {
               clickEffect={true}
               spotlightRadius={300}
               particleCount={10}
-              glowColor="230, 91, 20"
+              glowColor="132, 0, 255"
             />
           </div>
         </div>

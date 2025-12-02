@@ -103,21 +103,63 @@ type Translations = {
   'contact.form.message': string
   'contact.form.send': string
   
-  // Budget Form
+  // Contact Form
+  'contact.quickContact': string
+  'contact.orFillForm': string
+  'contact.advancedQuote': string
+  'contact.stepper.back': string
+  'contact.stepper.next': string
+  'contact.step1.title': string
+  'contact.step1.nameLabel': string
+  'contact.step1.namePlaceholder': string
+  'contact.step1.emailLabel': string
+  'contact.step1.emailPlaceholder': string
+  'contact.step2.title': string
+  'contact.step2.selectOption': string
+  'contact.step2.website': string
+  'contact.step2.webApp': string
+  'contact.step2.mobileApp': string
+  'contact.step2.apiBackend': string
+  'contact.step2.ecommerce': string
+  'contact.step2.other': string
+  'contact.step3.title': string
+  'contact.step3.webDesktop': string
+  'contact.step3.webMobile': string
+  'contact.step3.ios': string
+  'contact.step3.android': string
+  'contact.step3.multiplatform': string
+  'contact.step4.title': string
+  'contact.step4.selectOption': string
+  'contact.step4.yesComplete': string
+  'contact.step4.yesPartial': string
+  'contact.step4.noNeedDesign': string
+  'contact.step4.noUseTemplate': string
+  'contact.step5.title': string
+  'contact.step5.placeholder': string
+  'contact.step6.title': string
+  'contact.step6.selectOption': string
+  'contact.step6.no': string
+  'contact.step6.basic': string
+  'contact.step6.social': string
+  'contact.step6.advanced': string
+  'contact.step7.title': string
+  'contact.step7.selectOption': string
+  'contact.step7.no': string
+  'contact.step7.occasional': string
+  'contact.step7.monthly': string
+  'contact.step7.full': string
+  'contact.step8.title': string
+  'contact.step8.placeholder': string
+  'contact.step9.title': string
+  'contact.step9.subtitle': string
+  'contact.step9.placeholder': string
+  'contact.sent.title': string
+  'contact.sent.message': string
+  'contact.sending': string
+  
+  // Legacy Budget Form (keep for compatibility)
   'contact.budget.intro': string
-  'contact.budget.name': string
-  'contact.budget.email': string
-  'contact.budget.projectType': string
-  'contact.budget.budgetRange': string
-  'contact.budget.description': string
-  'contact.budget.namePlaceholder': string
-  'contact.budget.emailPlaceholder': string
-  'contact.budget.descriptionPlaceholder': string
   'contact.budget.selectOption': string
-  'contact.budget.submit': string
-  'contact.budget.submitted': string
-  'contact.budget.successMessage': string
-  'contact.budget.emailSubject': string
   'contact.budget.projectTypes.webApp': string
   'contact.budget.projectTypes.api': string
   'contact.budget.projectTypes.migration': string
@@ -230,20 +272,60 @@ const translations: Record<Language, Translations> = {
     'contact.form.message': 'Your message',
     'contact.form.send': 'Send',
     
+    'contact.quickContact': 'Send me a direct email',
+    'contact.orFillForm': 'Or fill out the required information for a personalized quote',
+    'contact.advancedQuote': 'Advanced Quote',
+    'contact.stepper.back': 'Back',
+    'contact.stepper.next': 'Next',
+    'contact.step1.title': 'Contact Information',
+    'contact.step1.nameLabel': 'Name/Company *',
+    'contact.step1.namePlaceholder': 'Your name or company',
+    'contact.step1.emailLabel': 'Email *',
+    'contact.step1.emailPlaceholder': 'you@email.com',
+    'contact.step2.title': 'What type of service do you need?',
+    'contact.step2.selectOption': 'Select an option',
+    'contact.step2.website': 'Website',
+    'contact.step2.webApp': 'Web Application',
+    'contact.step2.mobileApp': 'Mobile Application',
+    'contact.step2.apiBackend': 'API/Backend',
+    'contact.step2.ecommerce': 'E-commerce',
+    'contact.step2.other': 'Other',
+    'contact.step3.title': 'Which platforms should it work on?',
+    'contact.step3.webDesktop': 'Web (desktop)',
+    'contact.step3.webMobile': 'Web (mobile)',
+    'contact.step3.ios': 'iOS',
+    'contact.step3.android': 'Android',
+    'contact.step3.multiplatform': 'Multi-platform',
+    'contact.step4.title': 'Do you already have a design?',
+    'contact.step4.selectOption': 'Select an option',
+    'contact.step4.yesComplete': 'Yes, I have complete design (Figma/Adobe XD)',
+    'contact.step4.yesPartial': 'I have some ideas/sketches',
+    'contact.step4.noNeedDesign': 'No, I need complete design',
+    'contact.step4.noUseTemplate': 'No, I can use a template',
+    'contact.step5.title': 'What main features do you need?',
+    'contact.step5.placeholder': 'E.g.: Login system, shopping cart, admin panel, real-time chat, etc.',
+    'contact.step6.title': 'Do you need user/authentication system?',
+    'contact.step6.selectOption': 'Select an option',
+    'contact.step6.no': 'No need',
+    'contact.step6.basic': 'Yes, basic login (email/password)',
+    'contact.step6.social': 'Yes, with social media (Google, Facebook, etc.)',
+    'contact.step6.advanced': 'Yes, with advanced roles and permissions',
+    'contact.step7.title': 'Will you need ongoing maintenance?',
+    'contact.step7.selectOption': 'Select an option',
+    'contact.step7.no': 'No, just initial development',
+    'contact.step7.occasional': 'Occasional (specific updates)',
+    'contact.step7.monthly': 'Monthly (regular support and maintenance)',
+    'contact.step7.full': 'Full (ongoing development)',
+    'contact.step8.title': 'Do you need integrations with other services?',
+    'contact.step8.placeholder': 'E.g.: Payment gateways (Stripe, PayPal), external APIs, email services, etc.',
+    'contact.step9.title': 'Additional information',
+    'contact.step9.subtitle': 'Is there anything else I should know about your project?',
+    'contact.step9.placeholder': 'References, inspirations, special requirements, etc.',
+    'contact.sent.title': 'Sent!',
+    'contact.sent.message': 'Thank you for your interest. I\'ll get back to you soon with a personalized quote.',
+    'contact.sending': 'Sending...',
     'contact.budget.intro': 'Tell me about your project and I\'ll get back to you with a personalized quote.',
-    'contact.budget.name': 'Full Name',
-    'contact.budget.email': 'Email Address',
-    'contact.budget.projectType': 'Project Type',
-    'contact.budget.budgetRange': 'Budget Range',
-    'contact.budget.description': 'Project Description',
-    'contact.budget.namePlaceholder': 'John Doe',
-    'contact.budget.emailPlaceholder': 'john@example.com',
-    'contact.budget.descriptionPlaceholder': 'Describe your project, requirements, timeline, etc.',
     'contact.budget.selectOption': 'Select an option',
-    'contact.budget.submit': 'Request Quote',
-    'contact.budget.submitted': 'Sent!',
-    'contact.budget.successMessage': 'Your email client should open. Send the email to complete your request.',
-    'contact.budget.emailSubject': 'Budget Request',
     'contact.budget.projectTypes.webApp': 'Web Application',
     'contact.budget.projectTypes.api': 'REST API / Backend',
     'contact.budget.projectTypes.migration': 'Migration / Modernization',
@@ -264,7 +346,7 @@ const translations: Record<Language, Translations> = {
     'nav.contact': 'Contacto',
     'nav.about': 'Sobre Mí',
     
-    'hero.title': 'Desarrolladora Back End aprendiendo Node.js y React',
+    'hero.title': 'Sol Serki',
     'hero.subtitle': '5+ años construyendo backends web confiables (.NET, Java/Spring). Ahora expandiéndome a Node.js, React, Tailwind y animaciones UI encantadoras.',
     'hero.cta.projects': 'Ver Proyectos',
     'hero.cta.stack': 'Mi Stack Técnico',
@@ -314,7 +396,7 @@ const translations: Record<Language, Translations> = {
     'about.interests.exploreCreative': 'Explorar Sección Creativa',
     
     'services.title': 'Servicios',
-    'services.subtitle': 'En qué puedo (y no puedo) ayudarte',
+    'services.subtitle': 'En qué puedo ayudarte',
     'services.whatIDo': 'Lo Que Hago',
     'services.whatIDontDo': 'Lo Que NO Hago',
     'services.webApps': 'Aplicaciones Web',
@@ -353,20 +435,60 @@ const translations: Record<Language, Translations> = {
     'contact.form.message': 'Tu mensaje',
     'contact.form.send': 'Enviar',
     
+    'contact.quickContact': 'Envíame un mail directo',
+    'contact.orFillForm': 'O completá la información requerida para una cotización personalizada',
+    'contact.advancedQuote': 'Cotización Avanzada',
+    'contact.stepper.back': 'Atrás',
+    'contact.stepper.next': 'Siguiente',
+    'contact.step1.title': 'Información de Contacto',
+    'contact.step1.nameLabel': 'Nombre/Empresa *',
+    'contact.step1.namePlaceholder': 'Tu nombre o empresa',
+    'contact.step1.emailLabel': 'Email *',
+    'contact.step1.emailPlaceholder': 'tu@email.com',
+    'contact.step2.title': '¿Qué tipo de servicio necesitas?',
+    'contact.step2.selectOption': 'Selecciona una opción',
+    'contact.step2.website': 'Sitio Web',
+    'contact.step2.webApp': 'Aplicación Web',
+    'contact.step2.mobileApp': 'Aplicación Móvil',
+    'contact.step2.apiBackend': 'API/Backend',
+    'contact.step2.ecommerce': 'E-commerce',
+    'contact.step2.other': 'Otro',
+    'contact.step3.title': '¿En qué plataformas debe funcionar?',
+    'contact.step3.webDesktop': 'Web (desktop)',
+    'contact.step3.webMobile': 'Web (mobile)',
+    'contact.step3.ios': 'iOS',
+    'contact.step3.android': 'Android',
+    'contact.step3.multiplatform': 'Multiplataforma',
+    'contact.step4.title': '¿Ya tienes un diseño?',
+    'contact.step4.selectOption': 'Selecciona una opción',
+    'contact.step4.yesComplete': 'Sí, tengo diseño completo (Figma/Adobe XD)',
+    'contact.step4.yesPartial': 'Tengo algunas ideas/bocetos',
+    'contact.step4.noNeedDesign': 'No, necesito diseño completo',
+    'contact.step4.noUseTemplate': 'No, puedo usar una plantilla',
+    'contact.step5.title': '¿Qué funcionalidades principales necesitas?',
+    'contact.step5.placeholder': 'Ej: Sistema de login, carrito de compras, panel de administración, chat en tiempo real, etc.',
+    'contact.step6.title': '¿Necesitas sistema de usuarios/autenticación?',
+    'contact.step6.selectOption': 'Selecciona una opción',
+    'contact.step6.no': 'No necesito',
+    'contact.step6.basic': 'Sí, login básico (email/contraseña)',
+    'contact.step6.social': 'Sí, con redes sociales (Google, Facebook, etc.)',
+    'contact.step6.advanced': 'Sí, con roles y permisos avanzados',
+    'contact.step7.title': '¿Necesitarás mantenimiento continuo?',
+    'contact.step7.selectOption': 'Selecciona una opción',
+    'contact.step7.no': 'No, solo desarrollo inicial',
+    'contact.step7.occasional': 'Ocasional (actualizaciones puntuales)',
+    'contact.step7.monthly': 'Mensual (soporte y mantenimiento regular)',
+    'contact.step7.full': 'Completo (desarrollo continuo)',
+    'contact.step8.title': '¿Necesitas integraciones con otros servicios?',
+    'contact.step8.placeholder': 'Ej: Pasarelas de pago (Stripe, PayPal), APIs externas, servicios de email, etc.',
+    'contact.step9.title': 'Información adicional',
+    'contact.step9.subtitle': '¿Hay algo más que deba saber sobre tu proyecto?',
+    'contact.step9.placeholder': 'Referencias, inspiraciones, requisitos especiales, etc.',
+    'contact.sent.title': '¡Enviado!',
+    'contact.sent.message': 'Gracias por tu interés. Te responderé pronto con una cotización personalizada.',
+    'contact.sending': 'Enviando...',
     'contact.budget.intro': 'Cuéntame sobre tu proyecto y te responderé con un presupuesto personalizado.',
-    'contact.budget.name': 'Nombre Completo',
-    'contact.budget.email': 'Correo Electrónico',
-    'contact.budget.projectType': 'Tipo de Proyecto',
-    'contact.budget.budgetRange': 'Rango de Presupuesto',
-    'contact.budget.description': 'Descripción del Proyecto',
-    'contact.budget.namePlaceholder': 'María García',
-    'contact.budget.emailPlaceholder': 'maria@ejemplo.com',
-    'contact.budget.descriptionPlaceholder': 'Describe tu proyecto, requisitos, plazos, etc.',
     'contact.budget.selectOption': 'Selecciona una opción',
-    'contact.budget.submit': 'Solicitar Presupuesto',
-    'contact.budget.submitted': '¡Enviado!',
-    'contact.budget.successMessage': 'Tu cliente de correo debería abrirse. Envía el email para completar tu solicitud.',
-    'contact.budget.emailSubject': 'Solicitud de Presupuesto',
     'contact.budget.projectTypes.webApp': 'Aplicación Web',
     'contact.budget.projectTypes.api': 'REST API / Backend',
     'contact.budget.projectTypes.migration': 'Migración / Modernización',

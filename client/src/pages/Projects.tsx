@@ -123,8 +123,8 @@ export default function Projects() {
       description: language === 'en'
         ? 'Personal portfolio built with React, TypeScript, and Tailwind CSS featuring animated backgrounds and modern UI components.'
         : 'Portafolio personal construido con React, TypeScript y Tailwind CSS con fondos animados y componentes UI modernos.',
-      status: 'development',
-      progress: 75,
+      status: 'completed',
+      progress: 100,
       technologies: ['React', 'TypeScript', 'Tailwind CSS', 'Vite'],
       github: 'https://github.com/SolSerki/PortfolioWebsite'
     }
