@@ -45,20 +45,20 @@ export default function Creative() {
     <>
       {isCursorEnabled && <SplashCursor />}
       <div className="min-h-screen bg-gradient-to-br from-purple-950 via-zinc-900 to-black">
-        <div className="mx-auto max-w-7xl px-6 py-16">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 py-8 sm:py-12 md:py-16">
         {/* Toggle Cursor Button */}
-        <div className="flex justify-end mb-6">
+        <div className="flex justify-end mb-4 sm:mb-6">
           <button
             onClick={() => setIsCursorEnabled(!isCursorEnabled)}
-            className="flex items-center gap-2 px-4 py-2 rounded-lg bg-zinc-900/50 border border-zinc-800 hover:border-purple-500/50 text-zinc-400 hover:text-purple-400 transition-all"
+            className="flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-lg bg-zinc-900/50 border border-zinc-800 hover:border-purple-500/50 text-zinc-400 hover:text-purple-400 transition-all"
           >
-            <HiSparkles className={`text-lg ${isCursorEnabled ? 'text-purple-400' : 'text-zinc-600'}`} />
-            <span className="text-sm">{isCursorEnabled ? 'Cursor ON' : 'Cursor OFF'}</span>
+            <HiSparkles className={`text-base sm:text-lg ${isCursorEnabled ? 'text-purple-400' : 'text-zinc-600'}`} />
+            <span className="text-xs sm:text-sm">{isCursorEnabled ? 'Cursor ON' : 'Cursor OFF'}</span>
           </button>
         </div>
         
         {/* Header */}
-        <div className="text-center mb-12">
+        <div className="text-center mb-8 sm:mb-10 md:mb-12">
           <div className="relative w-full max-w-4xl mx-auto">
             <div className="w-full aspect-[3/2]">
               <FrameAntique 
@@ -66,21 +66,21 @@ export default function Creative() {
                 preserveAspectRatio="xMidYMid meet"
               />
             </div>
-            <div className="absolute inset-0 flex flex-col items-center justify-center px-8 md:px-16">
-              <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-2 md:mb-4 bg-gradient-to-r from-purple-400 via-pink-400 to-purple-400 bg-clip-text text-transparent">
+            <div className="absolute inset-0 flex flex-col items-center justify-center px-4 sm:px-8 md:px-16">
+              <h1 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold mb-1 sm:mb-2 md:mb-4 bg-gradient-to-r from-purple-400 via-pink-400 to-purple-400 bg-clip-text text-transparent">
                 Keep
               </h1>
-              <p className="text-zinc-400 text-sm md:text-base lg:text-lg mb-1 md:mb-2">
+              <p className="text-zinc-400 text-xs sm:text-sm md:text-base lg:text-lg mb-0.5 sm:mb-1 md:mb-2 text-center">
                 n. an important part of our personality that others seldom see
               </p>
-              <p className="text-zinc-400 text-sm md:text-base lg:text-lg mb-1 md:mb-2">
+              <p className="text-zinc-400 text-xs sm:text-sm md:text-base lg:text-lg mb-0.5 sm:mb-1 md:mb-2 text-center">
                 ― a secret flaw, a hidden talent, trauma that never comes up, dreams we never mention ―
               </p>
               
-              <p className="text-zinc-400 text-sm md:text-base lg:text-lg mb-2 md:mb-4">
+              <p className="text-zinc-400 text-xs sm:text-sm md:text-base lg:text-lg mb-1 sm:mb-2 md:mb-4 text-center">
                 that remains a vital part of who we are even if nobody knows it's there.
               </p>
-              <p className="text-zinc-500 text-xs md:text-sm italic">
+              <p className="text-zinc-500 text-xs md:text-sm italic text-center">
                 The Dictionary of Obscure Sorrows - John Koenig
               </p>
             </div>
@@ -88,7 +88,7 @@ export default function Creative() {
         </div>
 
         {/* Tabs Navigation */}
-        <div className="flex flex-wrap justify-center gap-3 mb-12">
+        <div className="flex flex-wrap justify-center gap-2 sm:gap-3 mb-8 sm:mb-10 md:mb-12">
           {tabs.map((tab) => (
             <button
               key={tab.id}
@@ -101,20 +101,21 @@ export default function Creative() {
                   setSelectedStory(null)
                 }
               }}
-              className={`flex items-center gap-2 px-6 py-3 rounded-xl font-medium transition-all ${
+              className={`flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 md:px-6 py-2 sm:py-2.5 md:py-3 rounded-lg sm:rounded-xl text-sm sm:text-base font-medium transition-all ${
                 activeTab === tab.id
                   ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white shadow-lg shadow-purple-500/30'
                   : 'bg-zinc-900/50 text-zinc-400 hover:text-white hover:bg-zinc-800/50 border border-zinc-800'
               }`}
             >
-              <tab.icon className="text-xl" />
-              <span>{tab.label}</span>
+              <tab.icon className="text-lg sm:text-xl" />
+              <span className="hidden sm:inline">{tab.label}</span>
+              <span className="sm:hidden text-xs">{tab.label.split(' ')[0]}</span>
             </button>
           ))}
         </div>
 
         {/* Content Area */}
-        <div className="bg-zinc-900/30 backdrop-blur-sm rounded-2xl border border-zinc-800 p-8 min-h-[500px]">
+        <div className="bg-zinc-900/30 backdrop-blur-sm rounded-xl sm:rounded-2xl border border-zinc-800 p-4 sm:p-6 md:p-8 min-h-[400px] sm:min-h-[500px]">
           {activeTab === 'poems' && (
             <>
               {selectedPoem === null ? (
@@ -317,12 +318,12 @@ export default function Creative() {
         </div>
 
         {/* Footer */}
-        <footer className="border-t border-purple-500/20 mt-16">
-          <div className="mx-auto max-w-6xl px-6 py-6 text-sm text-zinc-400">
-            <div className="text-center mb-3">
+        <footer className="border-t border-purple-500/20 mt-8 sm:mt-12 md:mt-16">
+          <div className="mx-auto max-w-6xl px-4 sm:px-6 py-4 sm:py-6 text-xs sm:text-sm text-zinc-400">
+            <div className="text-center mb-2 sm:mb-3">
               {t('footer.copyright').replace('{year}', new Date().getFullYear().toString())}
             </div>
-            <div className="text-center text-xs text-zinc-500 mb-2">
+            <div className="text-center text-xs text-zinc-500 mb-1.5 sm:mb-2 px-2">
               {t('footer.creativeRights')}
             </div>
             <div className="text-center text-xs text-zinc-600">

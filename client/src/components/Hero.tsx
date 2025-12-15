@@ -39,9 +39,9 @@ export default function Hero() {
   }, [])
 
   return (
-    <section className="relative w-full h-full min-h-screen flex items-center bg-black">
+    <section className="relative w-full h-full min-h-screen flex items-center bg-black overflow-hidden">
       {/* DarkVeil animated background */}
-      <div className="absolute inset-0 z-0">
+      <div className="absolute inset-0 z-0 overflow-hidden">
         <DarkVeil
           hueShift={0}
           noiseIntensity={0}
@@ -53,11 +53,11 @@ export default function Hero() {
         />
       </div>
 
-      <div className="relative z-10 mx-auto max-w-6xl px-4 py-24 text-white">
-        <h1 ref={titleRef} className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight drop-shadow-lg">
+      <div className="relative z-10 mx-auto max-w-6xl px-4 sm:px-6 py-24 text-white w-full">
+        <h1 ref={titleRef} className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight drop-shadow-lg break-words">
           {t('hero.title')}
         </h1>
-        <p ref={subtitleRef} className="mt-4 text-lg text-zinc-300 drop-shadow-md">
+        <p ref={subtitleRef} className="mt-4 text-base sm:text-lg text-zinc-300 drop-shadow-md">
           {t('hero.subtitle')}
         </p>
         

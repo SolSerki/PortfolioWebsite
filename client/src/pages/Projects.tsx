@@ -131,14 +131,14 @@ export default function Projects() {
   ]
 
   return (
-    <div className="min-h-screen py-16 bg-white dark:bg-zinc-950">
-      <div className="mx-auto max-w-7xl px-6">
+    <div className="min-h-screen py-8 sm:py-12 md:py-16 bg-white dark:bg-zinc-950">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6">
         {/* Header */}
-        <div className="mb-16 transition-language">
-          <h1 className="text-5xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
+        <div className="mb-8 sm:mb-12 md:mb-16 transition-language">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-3 sm:mb-4 bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
             {language === 'en' ? 'Projects' : 'Proyectos'}
           </h1>
-          <p className="text-xl text-zinc-600 dark:text-zinc-400 max-w-2xl">
+          <p className="text-base sm:text-lg md:text-xl text-zinc-600 dark:text-zinc-400 max-w-2xl px-4 sm:px-0">
             {language === 'en' 
               ? 'A collection of my work and side projects' 
               : 'Una colección de mi trabajo y proyectos personales'}
@@ -152,23 +152,23 @@ export default function Projects() {
             return (
               <article 
                 key={project.id}
-                className="group relative bg-white dark:bg-zinc-900 rounded-3xl p-8 border border-zinc-200 dark:border-zinc-800 transition-all duration-300 hover:shadow-2xl hover:border-indigo-300 dark:hover:border-indigo-700 hover:-translate-y-1 transition-language"
+                className="group relative bg-white dark:bg-zinc-900 rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-8 border border-zinc-200 dark:border-zinc-800 transition-all duration-300 hover:shadow-2xl hover:border-indigo-300 dark:hover:border-indigo-700 hover:-translate-y-1 transition-language"
               >
                 {/* Status Badge & Progress */}
-                <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-6 mb-6 transition-language">
-                  <div className="flex-1 space-y-4">
+                <div className="flex flex-col gap-4 sm:gap-6 mb-4 sm:mb-6 transition-language">
+                  <div className="flex-1 space-y-3 sm:space-y-4">
                     {/* Title */}
-                    <h2 className="text-3xl font-bold text-zinc-900 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">
+                    <h2 className="text-2xl sm:text-3xl font-bold text-zinc-900 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">
                       {project.title}
                     </h2>
                     
                     {/* Status & Progress Container */}
-                    <div className="flex items-center gap-4">
-                      <span className={`inline-flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-semibold ${statusStyle.color} ${statusStyle.bgColor}`}>
-                        <span className={`w-2 h-2 rounded-full ${statusStyle.progressColor} animate-pulse`}></span>
+                    <div className="flex flex-wrap items-center gap-3 sm:gap-4">
+                      <span className={`inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-lg sm:rounded-xl text-xs sm:text-sm font-semibold ${statusStyle.color} ${statusStyle.bgColor}`}>
+                        <span className={`w-1.5 sm:w-2 h-1.5 sm:h-2 rounded-full ${statusStyle.progressColor} animate-pulse`}></span>
                         {language === 'en' ? statusStyle.labelEN : statusStyle.labelES}
                       </span>
-                      <span className="text-lg font-bold text-zinc-700 dark:text-zinc-300">
+                      <span className="text-base sm:text-lg font-bold text-zinc-700 dark:text-zinc-300">
                         {project.progress}%
                       </span>
                     </div>

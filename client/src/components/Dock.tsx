@@ -146,11 +146,25 @@ export default function Dock({
   dockHeight = 256,
   baseItemSize = 50
 }: DockProps) {
+  const [isMobile, setIsMobile] = useState(false);
+  
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 640);
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+  
+  const responsiveMagnification = isMobile ? 55 : magnification;
+  const responsiveDistance = isMobile ? 120 : distance;
+  const responsiveBaseItemSize = isMobile ? 40 : baseItemSize;
+  const responsivePanelHeight = isMobile ? 56 : panelHeight;
+  
   const mouseX = useMotionValue(Infinity);
   const isHovered = useMotionValue(0);
 
-  const maxHeight = useMemo(() => Math.max(dockHeight, magnification + magnification / 2 + 4), [magnification]);
-  const heightRow = useTransform(isHovered, [0, 1], [panelHeight, maxHeight]);
+  const maxHeight = useMemo(() => Math.max(dockHeight, responsiveMagnification + responsiveMagnification / 2 + 4), [responsiveMagnification]);
+  const heightRow = useTransform(isHovered, [0, 1], [responsivePanelHeight, maxHeight]);
   const height = useSpring(heightRow, spring);
 
   return (
@@ -164,8 +178,8 @@ export default function Dock({
           isHovered.set(0);
           mouseX.set(Infinity);
         }}
-        className={`${className} absolute bottom-2 left-1/2 transform -translate-x-1/2 flex items-end w-fit gap-4 rounded-2xl border-neutral-700 border-2 pb-2 px-4`}
-        style={{ height: panelHeight }}
+        className={`${className} absolute bottom-2 left-1/2 transform -translate-x-1/2 flex items-end w-fit gap-2 sm:gap-3 md:gap-4 rounded-xl sm:rounded-2xl border-neutral-700 border-2 pb-1.5 sm:pb-2 px-2 sm:px-3 md:px-4 max-w-[95vw] overflow-x-auto scrollbar-hide`}
+        style={{ height: responsivePanelHeight }}
         role="toolbar"
         aria-label="Application dock"
       >
@@ -176,9 +190,9 @@ export default function Dock({
             className={item.className}
             mouseX={mouseX}
             spring={spring}
-            distance={distance}
-            magnification={magnification}
-            baseItemSize={baseItemSize}
+            distance={responsiveDistance}
+            magnification={responsiveMagnification}
+            baseItemSize={responsiveBaseItemSize}
           >
             <DockIcon>{item.icon}</DockIcon>
             <DockLabel>{item.label}</DockLabel>

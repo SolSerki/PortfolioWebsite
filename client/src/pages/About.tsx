@@ -10,23 +10,21 @@ export default function About() {
   }
 
   return (
-    <div className="min-h-screen py-16">
-      <div className="mx-auto max-w-5xl px-4">
+    <div className="min-h-screen py-8 sm:py-12 md:py-16">
+      <div className="mx-auto max-w-5xl px-4 sm:px-6">
         {/* Header */}
-        <div className="mb-12 transition-language">
-          <h1 className="text-4xl font-bold mb-4">{t('about.title')}</h1>
+        <div className="mb-8 sm:mb-10 md:mb-12 transition-language">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">{t('about.title')}</h1>
         </div>
 
         {/* Profile Section */}
-        <section className="mb-16">
-          <div className="flex items-center gap-3 mb-6">
-            <HiSparkles className="text-3xl text-accent" />
-            <h2 className="text-2xl font-bold transition-language">{t('about.profile.title')}</h2>
+        <section className="mb-12 sm:mb-14 md:mb-16">
+          <div className="flex items-center gap-2 sm:gap-3 mb-4 sm:mb-6">
+            <HiSparkles className="text-2xl sm:text-3xl text-accent" />
+            <h2 className="text-xl sm:text-2xl font-bold transition-language">{t('about.profile.title')}</h2>
           </div>
           <div className="prose prose-zinc dark:prose-invert max-w-none">
-            <p className="text-lg leading-relaxed transition-language">
-              {t('about.profile.description')}
-            </p>
+            <p className="text-base sm:text-lg leading-relaxed transition-language">{t('about.profile.description')}</p>
           </div>
         </section>
 

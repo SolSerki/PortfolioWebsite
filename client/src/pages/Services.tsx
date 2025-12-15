@@ -119,14 +119,14 @@ export default function Services() {
   ]
 
   return (
-    <div className="min-h-screen py-16 bg-white dark:bg-zinc-950">
-      <div className="mx-auto max-w-7xl px-6">
+    <div className="min-h-screen py-8 sm:py-12 md:py-16 bg-white dark:bg-zinc-950">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6">
         {/* Header */}
-        <div className="text-center mb-16 transition-language">
-          <h1 className="text-5xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
+        <div className="text-center mb-8 sm:mb-12 md:mb-16 transition-language">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-3 sm:mb-4 bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
             {t('services.title')}
           </h1>
-          <p className="text-xl text-zinc-600 dark:text-zinc-400 max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg md:text-xl text-zinc-600 dark:text-zinc-400 max-w-2xl mx-auto px-4">
             {t('services.subtitle')}
           </p>
         </div>

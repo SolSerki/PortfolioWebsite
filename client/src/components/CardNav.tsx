@@ -19,7 +19,7 @@ export default function CardNav({ items, className = '' }: CardNavProps) {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
 
   return (
-    <nav className={`flex gap-2 transition-language ${className}`}>
+    <nav className={`flex gap-1.5 sm:gap-2 transition-language max-w-[95vw] overflow-x-auto scrollbar-hide ${className}`}>
       {items.map((item, index) => (
         <motion.button
           key={index}
@@ -27,8 +27,8 @@ export default function CardNav({ items, className = '' }: CardNavProps) {
           onMouseEnter={() => setHoveredIndex(index)}
           onMouseLeave={() => setHoveredIndex(null)}
           className={`
-            relative flex flex-col items-center justify-center gap-1 px-4 py-3 rounded-2xl
-            transition-all duration-300 cursor-pointer transition-language
+            relative flex flex-col items-center justify-center gap-0.5 sm:gap-1 px-2 sm:px-3 md:px-4 py-2 sm:py-2.5 md:py-3 rounded-xl sm:rounded-2xl
+            transition-all duration-300 cursor-pointer transition-language min-w-fit
             ${item.isActive 
               ? 'bg-indigo-500/20 text-indigo-600 dark:text-indigo-400' 
               : 'text-zinc-700 dark:text-zinc-300 hover:text-indigo-600 dark:hover:text-indigo-400'
@@ -41,7 +41,7 @@ export default function CardNav({ items, className = '' }: CardNavProps) {
           <AnimatePresence>
             {hoveredIndex === index && (
               <motion.div
-                className="absolute inset-0 bg-zinc-100 dark:bg-zinc-800/50 rounded-2xl"
+                className="absolute inset-0 bg-zinc-100 dark:bg-zinc-800/50 rounded-xl sm:rounded-2xl"
                 layoutId="hoverBackground"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
@@ -55,19 +55,19 @@ export default function CardNav({ items, className = '' }: CardNavProps) {
           {/* Active indicator */}
           {item.isActive && (
             <motion.div
-              className="absolute inset-0 rounded-2xl border-2 border-indigo-500/50"
+              className="absolute inset-0 rounded-xl sm:rounded-2xl border-2 border-indigo-500/50"
               layoutId="activeIndicator"
               transition={{ type: 'spring', bounce: 0.2, duration: 0.6 }}
             />
           )}
 
           {/* Icon */}
-          <div className="text-2xl relative z-10">
+          <div className="text-lg sm:text-xl md:text-2xl relative z-10">
             {item.icon}
           </div>
 
           {/* Label */}
-          <span className="text-xs font-medium relative z-10 whitespace-nowrap">
+          <span className="text-[10px] sm:text-xs font-medium relative z-10 whitespace-nowrap">
             {item.label}
           </span>
         </motion.button>

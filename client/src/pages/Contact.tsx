@@ -81,22 +81,21 @@ export default function Contact() {
   }
 
   return (
-    <div className="min-h-screen py-16">
-      <div className="mx-auto max-w-4xl px-4">
-        <div className="transition-language mb-8 text-center">
-          <h1 className="text-4xl font-bold mb-4">{t('contact.title')}</h1>
+    <div className="min-h-screen py-8 sm:py-12 md:py-16">
+      <div className="mx-auto max-w-4xl px-4 sm:px-6">
+        <div className="transition-language mb-6 sm:mb-8 text-center">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">{t('contact.title')}</h1>
 
           <div className="flex justify-center">
             <button
               onClick={handleSimpleContact}
-              className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-accent text-white font-medium hover:opacity-90 transition shadow-lg"
-            >
-              <HiEnvelope className="text-xl" />
+              className="inline-flex items-center justify-center gap-2 px-4 sm:px-6 py-2.5 sm:py-3 rounded-lg bg-accent text-white text-sm sm:text-base font-medium hover:opacity-90 transition shadow-lg">
+              <HiEnvelope className="text-lg sm:text-xl" />
               {t('contact.quickContact')}
             </button>
           </div>
           
-          <p className="text-center text-zinc-600 dark:text-zinc-400 mt-6 mb-8">
+          <p className="text-center text-sm sm:text-base text-zinc-600 dark:text-zinc-400 mt-4 sm:mt-6 mb-6 sm:mb-8 px-4">
             {t('contact.orFillForm')}
           </p>
         </div>
