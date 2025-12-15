@@ -67,6 +67,7 @@ export default function Hero() {
 
         
         <TechStack />
+        
       </div>
     </section>
   )

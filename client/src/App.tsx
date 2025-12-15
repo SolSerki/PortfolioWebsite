@@ -35,31 +35,37 @@ export default function App() {
       icon: <HiHome className="text-2xl" />,
       label: 'Home',
       onClick: () => {},
+      className: 'nav-hero'
     },
     {
       icon: <HiUser className="text-2xl" />,
       label: t('nav.about'),
       onClick: () => {},
+      className: 'nav-about'
     },
     {
       icon: <HiRectangleGroup className="text-2xl" />,
       label: t('nav.projects'),
       onClick: () => {},
+      className: 'nav-projects'
     },
     {
       icon: <HiCog6Tooth className="text-2xl" />,
       label: t('services.title'),
       onClick: () => {},
+      className: 'nav-services'
     },
     {
       icon: <HiEnvelope className="text-2xl" />,
       label: t('nav.contact'),
       onClick: () => {},
+      className: 'nav-contact'
     },
     {
       icon: <HiLanguage className="text-2xl" />,
       label: language === 'en' ? 'ES' : 'EN',
       onClick: () => setLanguage(language === 'en' ? 'es' : 'en'),
+      className: 'nav-language'
     }
   ]
 

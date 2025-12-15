@@ -88,8 +88,9 @@ export default function NavigationWrapper({
 
   // Map items to add scroll functionality
   const processedItems = items.map(item => {
-    const labelStr = typeof item.label === 'string' ? item.label : '';
-    const sectionId = labelStr === 'Home' ? 'hero' : labelStr.toLowerCase();
+    // Extract section ID from className if present (e.g., 'nav-hero' -> 'hero')
+    const sectionMatch = item.className?.match(/nav-(\w+)/);
+    const sectionId = sectionMatch ? sectionMatch[1] : '';
     const isNavigationItem = ['hero', 'about', 'projects', 'services', 'contact'].includes(sectionId);
 
     return {
