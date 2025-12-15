@@ -41,6 +41,75 @@ export default function Creative() {
     { id: 'knights-witches' as CreativeTab, label: 'Knights & Witches', icon: HiShieldCheck }
   ]
 
+  if (!isUnlocked) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-purple-950 via-zinc-900 to-black p-4">
+        <div className="max-w-md w-full">
+          {/* Lock Icon */}
+          <div className="flex justify-center mb-8">
+            <div className="p-6 bg-gradient-to-br from-purple-500/20 to-pink-500/20 rounded-full border border-purple-500/30 backdrop-blur-sm">
+              <HiLockClosed  className="text-6xl text-purple-400" />
+            </div>
+          </div>
+
+          {/* Title */}
+          <div className="text-center mb-8">
+            <h1 className="text-4xl font-bold mb-3 bg-gradient-to-r from-purple-400 via-pink-400 to-purple-400 bg-clip-text text-transparent">
+              Sección Restringida
+            </h1>
+            <p className="text-zinc-400 text-sm italic">
+              Bloom thy roses
+            </p>
+            <p className="text-zinc-400 text-sm italic">
+              Beware the thorns
+            </p>
+            <p className="text-zinc-400 text-sm italic">
+              Continue at your peril
+            </p>
+           <p className="text-zinc-400 text-sm italic">
+              You’ve been warned
+            </p>
+          </div>
+
+          {/* Password Form */}
+          <form onSubmit={handlePasswordSubmit} className="space-y-4">
+            <div className="relative">
+              <input
+                type="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                placeholder="Ingresa la contraseña"
+                className={`w-full px-6 py-4 rounded-xl bg-zinc-900/50 border ${
+                  error ? 'border-red-500' : 'border-zinc-700'
+                } text-white placeholder:text-zinc-500 focus:outline-none focus:border-purple-500 transition-all backdrop-blur-sm`}
+                autoFocus
+              />
+              {error && (
+                <p className="absolute -bottom-6 left-0 text-red-400 text-sm">
+                  Ah ah ah! No dijiste las palabras mágicas!
+                </p>
+              )}
+            </div>
+
+            <button
+              type="submit"
+              className="w-full px-6 py-4 rounded-xl bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-500 hover:to-pink-500 text-white font-medium transition-all transform hover:scale-105 shadow-lg hover:shadow-purple-500/50"
+            >
+              Entrar
+            </button>
+          </form>
+
+          {/* Decorative elements */}
+          <div className="mt-8 flex justify-center gap-2">
+            <div className="w-2 h-2 rounded-full bg-purple-500/30 animate-pulse"></div>
+            <div className="w-2 h-2 rounded-full bg-pink-500/30 animate-pulse delay-75"></div>
+            <div className="w-2 h-2 rounded-full bg-purple-500/30 animate-pulse delay-150"></div>
+          </div>
+        </div>
+      </div>
+    )
+  }
+
   return (
     <>
       {isCursorEnabled && <SplashCursor />}
@@ -208,7 +277,7 @@ export default function Creative() {
               {selectedStory === null ? (
                 // Galería de imágenes de historias cortas
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  {/* Cuartito Oscuro*/}
+                  {/* Historia 1 */}
                   <button
                     onClick={() => setSelectedStory(1)}
                     className="group relative overflow-hidden rounded-xl border border-pink-500/30 hover:border-pink-500/60 transition-all transform hover:scale-105"
@@ -223,33 +292,42 @@ export default function Creative() {
                     </div>
                   </button>
 
-                  {/* Up the Stairs */}
+                  {/* Historia 2 */}
                   <button
                     onClick={() => setSelectedStory(2)}
                     className="group relative overflow-hidden rounded-xl border border-purple-500/30 hover:border-purple-500/60 transition-all transform hover:scale-105"
                   >
-                    <img
-                      src="/images/stories/Up the Stairs.png"
-                      alt="Up the Stairs"
-                      className="w-full h-auto object-cover"
-                    />
+                    <div className="w-full aspect-[4/3] bg-gradient-to-br from-purple-900/40 to-pink-900/40 flex items-center justify-center">
+                      <span className="text-4xl text-purple-300/30">Up the Stairs</span>
+                    </div>
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
                       <h3 className="text-2xl font-bold text-white">Up the Stairs</h3>
                     </div>
                   </button>
 
-                  {/* Entreabierta */}
+                  {/* Historia 3 */}
                   <button
                     onClick={() => setSelectedStory(3)}
                     className="group relative overflow-hidden rounded-xl border border-pink-500/30 hover:border-pink-500/60 transition-all transform hover:scale-105"
                   >
-                    <img
-                      src="/images/stories/Entreabierta.png"
-                      alt="Entreabierta"
-                      className="w-full h-auto object-cover"
-                    />
+                    <div className="w-full aspect-[4/3] bg-gradient-to-br from-pink-900/40 to-purple-900/40 flex items-center justify-center">
+                      <span className="text-4xl text-pink-300/30">Entreabierta</span>
+                    </div>
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
                       <h3 className="text-2xl font-bold text-white">Entreabierta</h3>
+                    </div>
+                  </button>
+
+                  {/* Historia 4 */}
+                  <button
+                    onClick={() => setSelectedStory(4)}
+                    className="group relative overflow-hidden rounded-xl border border-purple-500/30 hover:border-purple-500/60 transition-all transform hover:scale-105"
+                  >
+                    <div className="w-full aspect-[4/3] bg-gradient-to-br from-purple-900/40 to-pink-900/40 flex items-center justify-center">
+                      <span className="text-4xl text-purple-300/30">Historia 4</span>
+                    </div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+                      <h3 className="text-2xl font-bold text-white">Título 4</h3>
                     </div>
                   </button>
                 </div>
@@ -270,6 +348,7 @@ export default function Creative() {
 
                   {selectedStory === 3 && <Entreabierta />}
 
+                  {selectedStory === 4 && <Story4 />}
                 </div>
               )}
             </>
@@ -315,21 +394,6 @@ export default function Creative() {
 
           {activeTab === 'knights-witches' && <KnightsWitches />}
         </div>
-
-        {/* Footer */}
-        <footer className="border-t border-purple-500/20 mt-16">
-          <div className="mx-auto max-w-6xl px-6 py-6 text-sm text-zinc-400">
-            <div className="text-center mb-3">
-              {t('footer.copyright').replace('{year}', new Date().getFullYear().toString())}
-            </div>
-            <div className="text-center text-xs text-zinc-500 mb-2">
-              {t('footer.creativeRights')}
-            </div>
-            <div className="text-center text-xs text-zinc-600">
-              {t('footer.builtWith')}
-            </div>
-          </div>
-        </footer>
       
         </div>
       </div>

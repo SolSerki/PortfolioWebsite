@@ -77,6 +77,8 @@ type Translations = {
   'services.portfoliosDesc': string
   'services.backend': string
   'services.backendDesc': string
+  'services.andMore': string
+  'services.andMoreDesc': string
   'services.uxui': string
   'services.uxuiDesc': string
   'services.branding': string
@@ -174,6 +176,8 @@ type Translations = {
   
   // Footer
   'footer.builtWith': string
+  'footer.copyright': string
+  'footer.creativeRights': string
 }
 
 const translations: Record<Language, Translations> = {
@@ -184,7 +188,7 @@ const translations: Record<Language, Translations> = {
     'nav.about': 'About',
     
     'hero.title': 'Sol Serki',
-    'hero.subtitle': '5+ years building reliable web backends (.NET, Java/Spring). Now expanding into Node.js, React, Tailwind, and delightful UI animations.',
+    'hero.subtitle': 'Over six years building reliable web backends (.NET, Java/Spring). Now expanding into Node.js, React, Tailwind, and UI animations.',
     'hero.cta.projects': 'View Projects',
     'hero.cta.stack': 'My Tech Stack',
     
@@ -248,6 +252,8 @@ const translations: Record<Language, Translations> = {
     'services.portfoliosDesc': 'Professional portfolio websites with custom animations',
     'services.backend': 'Backend Development',
     'services.backendDesc': 'REST APIs, databases, authentication, and server architecture',
+    'services.andMore': 'And more...',
+    'services.andMoreDesc': 'Have something in mind? Let\'s talk about your project. If you can dream it, we can build it!',
     'services.uxui': 'UX/UI Design',
     'services.uxuiDesc': 'I focus on development, not design work',
     'services.branding': 'Branding',
@@ -338,7 +344,9 @@ const translations: Record<Language, Translations> = {
     'contact.budget.budgetRanges.range5k10k': '$5,000 - $10,000',
     'contact.budget.budgetRanges.over10k': 'More than $10,000',
     
-    'footer.builtWith': 'Built with React, Tailwind, Anime.js.'
+    'footer.builtWith': 'Built with React, Tailwind, Anime.js.',
+    'footer.copyright': '© {year} Sol Serki. All rights reserved.',
+    'footer.creativeRights': 'All creative works, including poems, stories, and tarot designs, are protected by intellectual property rights.'
   },
   es: {
     'nav.projects': 'Proyectos',
@@ -347,7 +355,7 @@ const translations: Record<Language, Translations> = {
     'nav.about': 'Sobre Mí',
     
     'hero.title': 'Sol Serki',
-    'hero.subtitle': '5+ años construyendo backends web confiables (.NET, Java/Spring). Ahora expandiéndome a Node.js, React, Tailwind y animaciones UI encantadoras.',
+    'hero.subtitle': 'Más de seis años construyendo backends web confiables (.NET, Java/Spring). Ahora expandiéndome a Node.js, React, Tailwind y animaciones UI.',
     'hero.cta.projects': 'Ver Proyectos',
     'hero.cta.stack': 'Mi Stack Técnico',
     
@@ -411,6 +419,8 @@ const translations: Record<Language, Translations> = {
     'services.portfoliosDesc': 'Sitios web de portfolio profesionales con animaciones personalizadas',
     'services.backend': 'Desarrollo Backend',
     'services.backendDesc': 'APIs REST, bases de datos, autenticación y arquitectura de servidor',
+    'services.andMore': 'Y más...',
+    'services.andMoreDesc': '¿Tenés algo en mente? ¡Contame sobre tu proyecto y veamos cómo lo hacemos realidad!',
     'services.uxui': 'Diseño UX/UI',
     'services.uxuiDesc': 'Me enfoco en desarrollo, no en trabajo de diseño',
     'services.branding': 'Branding',
@@ -501,7 +511,9 @@ const translations: Record<Language, Translations> = {
     'contact.budget.budgetRanges.range5k10k': '$5,000 - $10,000',
     'contact.budget.budgetRanges.over10k': 'Más de $10,000',
     
-    'footer.builtWith': 'Construido con React, Tailwind, Anime.js.'
+    'footer.builtWith': 'Construido con React, Tailwind, Anime.js.',
+    'footer.copyright': '© {year} Sol Serki. Todos los derechos reservados.',
+    'footer.creativeRights': 'Todas las obras creativas, incluyendo poemas, historias y diseños de tarot, están protegidas por derechos de propiedad intelectual.'
   }
 }
 

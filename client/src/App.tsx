@@ -30,7 +30,7 @@ export default function App() {
   useEffect(() => {
     const saved = localStorage.getItem('theme')
     const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches
-    const dark = saved ? saved === 'dark' : prefersDark
+    const dark = saved ? saved === 'dark' : (saved === null ? true : prefersDark)
     document.documentElement.classList.toggle('dark', dark)
   }, [])
 
@@ -205,8 +205,16 @@ export default function App() {
 
         {/* Footer */}
         <footer className="border-t border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-950">
-          <div className="mx-auto max-w-6xl px-6 py-4 text-sm text-zinc-500 text-center">
-            © {new Date().getFullYear()} Sol Serki. {t('footer.builtWith')}
+          <div className="mx-auto max-w-6xl px-6 py-6 text-sm text-zinc-500">
+            <div className="text-center mb-3">
+              {t('footer.copyright').replace('{year}', new Date().getFullYear().toString())}
+            </div>
+            <div className="text-center text-xs text-zinc-400 dark:text-zinc-600 mb-2">
+              {t('footer.creativeRights')}
+            </div>
+            <div className="text-center text-xs">
+              {t('footer.builtWith')}
+            </div>
           </div>
         </footer>
       </div>

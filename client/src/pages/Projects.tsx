@@ -113,7 +113,7 @@ export default function Projects() {
         ? 'Veterinary management system with appointment scheduling, medical records, and client management. Built with Spring Boot and modern web technologies.'
         : 'Sistema de gestión veterinaria con agenda de turnos, historias clínicas y gestión de clientes. Construido con Spring Boot y tecnologías web modernas.',
       status: 'development',
-      progress: 60,
+      progress: 80,
       technologies: ['Java', 'Spring Boot', 'Thymeleaf', 'Bootstrap', 'MySQL'],
       github: 'https://github.com/SolSerki/Vetty'
     },

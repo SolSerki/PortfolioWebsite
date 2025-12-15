@@ -101,6 +101,20 @@ export default function Services() {
           </p>
         </div>
       )
+    },
+    {
+      color: '#000000ff',
+      label: <h3 className="font-semibold text-lg mb-2 transition-language">{t('services.andMore')}</h3>,
+      colspan: 4,
+      rowspan: 1,
+      content: (
+        <div className="flex flex-col h-full items-center justify-center">
+          <HiSparkles className="text-4xl text-pink-500 mb-3" />
+          <p className="text-sm text-zinc-600 dark:text-zinc-400 text-center transition-language">
+            {t('services.andMoreDesc')}
+          </p>
+        </div>
+      )
     }
   ]
 

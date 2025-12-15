@@ -85,9 +85,6 @@ export default function Contact() {
       <div className="mx-auto max-w-4xl px-4">
         <div className="transition-language mb-8 text-center">
           <h1 className="text-4xl font-bold mb-4">{t('contact.title')}</h1>
-          <p className="text-lg text-zinc-600 dark:text-zinc-400 mb-6">
-            {t('contact.budget.intro')}
-          </p>
 
           <div className="flex justify-center">
             <button
