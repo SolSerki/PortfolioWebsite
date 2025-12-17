@@ -49,7 +49,7 @@ export default function Hero() {
           speed={1.5}
           scanlineFrequency={0}
           warpAmount={0}
-          resolutionScale={1}
+          resolutionScale={typeof window !== 'undefined' && window.innerWidth < 768 ? 0.5 : 1}
         />
       </div>
 

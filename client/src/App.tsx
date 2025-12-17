@@ -8,7 +8,7 @@ import Projects from './pages/Projects'
 import Services from './pages/Services'
 import Contact from './pages/Contact'
 import Creative from './pages/Creative'
-import { HiHome, HiRectangleGroup, HiCog6Tooth, HiEnvelope, HiLanguage, HiUser } from 'react-icons/hi2'
+import { HiHome, HiRectangleGroup, HiCog6Tooth, HiEnvelope, HiLanguage, HiUser, HiDocumentArrowDown } from 'react-icons/hi2'
 
 export default function App() {
   const { language, setLanguage, t } = useLanguage()
@@ -62,6 +62,19 @@ export default function App() {
       className: 'nav-contact'
     },
     {
+      icon: <HiDocumentArrowDown className="text-2xl" />,
+      label: t('nav.cv'),
+      onClick: () => {
+        const link = document.createElement('a');
+        link.href = '/CV Sol Serki.docx';
+        link.download = 'CV Sol Serki.docx';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+      },
+      className: 'nav-cv'
+    },
+    {
       icon: <HiLanguage className="text-2xl" />,
       label: language === 'en' ? 'ES' : 'EN',
       onClick: () => setLanguage(language === 'en' ? 'es' : 'en'),
@@ -111,9 +124,8 @@ export default function App() {
           <section id="contact">
             <Contact />
           </section>
-        </main>
 
-        {/* Footer */}
+                  {/* Footer */}
         <footer className="border-t border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-950">
           <div className="mx-auto max-w-6xl px-4 sm:px-6 py-4 sm:py-6 text-xs sm:text-sm text-zinc-500">
             <div className="text-center mb-2 sm:mb-3">
@@ -127,6 +139,7 @@ export default function App() {
             </div>
           </div>
         </footer>
+        </main>
       </div>
       <Analytics />
     </>

@@ -18,7 +18,7 @@ export default function CardNav({ items, className = '' }: CardNavProps) {
       {/* Toggle Button */}
       <button
         onClick={() => setIsVisible(!isVisible)}
-        className="fixed top-4 right-4 z-[60] p-2 sm:p-3 rounded-full bg-white/70 dark:bg-zinc-950/70 backdrop-blur-md border border-zinc-200/50 dark:border-zinc-800 hover:bg-white/90 dark:hover:bg-zinc-900/90 transition-all"
+        className="fixed top-4 left-4 z-[60] p-2 sm:p-3 rounded-full bg-white/70 dark:bg-zinc-950/70 backdrop-blur-md border border-zinc-200/50 dark:border-zinc-800 hover:bg-white/90 dark:hover:bg-zinc-900/90 transition-all"
         aria-label={isVisible ? 'Hide menu' : 'Show menu'}
       >
         <img 

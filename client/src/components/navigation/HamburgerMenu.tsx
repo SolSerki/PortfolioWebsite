@@ -15,7 +15,7 @@ export default function HamburgerMenu({ items, className = '' }: HamburgerMenuPr
       {/* Hamburger Button */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className={`${className} fixed top-4 right-4 z-50 p-3 rounded-lg bg-[#060010] border-2 border-neutral-700 hover:border-neutral-500 transition-colors`}
+        className={`${className} fixed top-4 left-4 z-50 p-3 rounded-lg bg-[#060010] border-2 border-neutral-700 hover:border-neutral-500 transition-colors`}
         aria-label="Toggle menu"
       >
         <div className="w-6 h-5 flex flex-col justify-between">
@@ -48,17 +48,16 @@ export default function HamburgerMenu({ items, className = '' }: HamburgerMenuPr
 
             {/* Sidebar */}
             <motion.div
-              initial={{ x: '100%' }}
+              initial={{ x: '-100%' }}
               animate={{ x: 0 }}
-              exit={{ x: '100%' }}
+              exit={{ x: '-100%' }}
               transition={{ type: 'spring', damping: 25, stiffness: 200 }}
-              className="fixed right-0 top-0 h-full w-72 sm:w-80 bg-[#060010] border-l-2 border-neutral-700 z-50 p-6 overflow-y-auto"
-            >
+              className="fixed left-0 top-0 h-full w-72 sm:w-80 bg-[#060010] border-r-2 border-neutral-700 z-50 p-6 overflow-y-auto">
               <div className="mt-16 space-y-2">
                 {items.map((item, index) => (
                   <motion.button
                     key={index}
-                    initial={{ opacity: 0, x: 20 }}
+                    initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: index * 0.1 }}
                     onClick={() => {

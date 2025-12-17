@@ -496,8 +496,8 @@ const BentoCardGrid: React.FC<{
   gridRef?: React.RefObject<HTMLDivElement>;
 }> = ({ children, gridRef }) => (
   <div
-    className="bento-section grid gap-2 p-3 max-w-[54rem] select-none relative"
-    style={{ fontSize: 'clamp(1rem, 0.9rem + 0.5vw, 1.5rem)' }}
+    className="bento-section grid gap-2 p-2 sm:p-3 md:p-4 w-full max-w-full sm:max-w-[90vw] md:max-w-[54rem] mx-auto select-none relative overflow-x-hidden"
+    style={{ fontSize: 'clamp(0.875rem, 0.8rem + 0.5vw, 1.5rem)' }}
     ref={gridRef}
   >
     {children}
@@ -557,14 +557,16 @@ const MagicBento: React.FC<BentoProps> = ({
           
           .card-responsive {
             grid-template-columns: 1fr;
-            width: 90%;
+            width: 100%;
             margin: 0 auto;
-            padding: 0.5rem;
+            padding: 0;
+            gap: 0.5rem;
           }
           
-          @media (min-width: 600px) {
+          @media (min-width: 640px) {
             .card-responsive {
               grid-template-columns: repeat(2, 1fr);
+              gap: 0.75rem;
             }
           }
           
@@ -572,6 +574,7 @@ const MagicBento: React.FC<BentoProps> = ({
             .card-responsive {
               grid-template-columns: repeat(4, 1fr);
               grid-auto-rows: minmax(200px, auto);
+              gap: 0.5rem;
             }
           }
           
@@ -636,17 +639,39 @@ const MagicBento: React.FC<BentoProps> = ({
             text-overflow: ellipsis;
           }
           
-          @media (max-width: 599px) {
+          @media (max-width: 639px) {
             .card-responsive {
-              grid-template-columns: 1fr;
-              width: 90%;
+              grid-template-columns: 1fr !important;
+              width: 100%;
               margin: 0 auto;
-              padding: 0.5rem;
+              padding: 0;
             }
             
             .card-responsive .card {
-              width: 100%;
-              min-height: 180px;
+              width: 100% !important;
+              min-height: 150px;
+              padding: 1rem;
+              font-size: 0.875rem;
+              grid-column: span 1 !important;
+              grid-row: span 1 !important;
+            }
+            
+            .card__title {
+              font-size: 0.875rem !important;
+            }
+            
+            .card__description {
+              font-size: 0.75rem !important;
+            }
+            
+            .card__label {
+              font-size: 0.75rem !important;
+            }
+            
+            .bento-section {
+              max-width: 100vw !important;
+              padding: 0.5rem !important;
+              overflow-x: hidden;
             }
           }
         `}
@@ -665,7 +690,7 @@ const MagicBento: React.FC<BentoProps> = ({
       <BentoCardGrid gridRef={gridRef}>
         <div className="card-responsive grid gap-2">
           {cards.map((card, index) => {
-            const baseClassName = `card flex flex-col justify-between relative min-h-[200px] w-full max-w-full p-5 rounded-[20px] border border-solid font-light overflow-hidden transition-all duration-300 ease-in-out hover:-translate-y-0.5 hover:shadow-[0_8px_25px_rgba(0,0,0,0.15)] ${
+            const baseClassName = `card flex flex-col justify-between relative min-h-[150px] sm:min-h-[180px] md:min-h-[200px] w-full max-w-full p-3 sm:p-4 md:p-5 rounded-[12px] sm:rounded-[16px] md:rounded-[20px] border border-solid font-light overflow-hidden transition-all duration-300 ease-in-out hover:-translate-y-0.5 hover:shadow-[0_8px_25px_rgba(0,0,0,0.15)] ${
               enableBorderGlow ? 'card--border-glow' : ''
             } ${card.className || ''}`;
 
@@ -677,8 +702,8 @@ const MagicBento: React.FC<BentoProps> = ({
               '--glow-y': '50%',
               '--glow-intensity': '0',
               '--glow-radius': '200px',
-              gridColumn: card.colspan ? `span ${card.colspan}` : undefined,
-              gridRow: card.rowspan ? `span ${card.rowspan}` : undefined
+              gridColumn: isMobile ? 'span 1' : (card.colspan ? `span ${card.colspan}` : undefined),
+              gridRow: isMobile ? 'span 1' : (card.rowspan ? `span ${card.rowspan}` : undefined)
             } as React.CSSProperties;
 
             if (enableStars) {

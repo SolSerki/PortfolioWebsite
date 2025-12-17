@@ -45,9 +45,12 @@ export default function About() {
                 </span>
               </div>
               <p className="text-accent font-medium mb-3">{t('about.work.vetty.company')}</p>
-              <p className="text-zinc-700 dark:text-zinc-300 leading-relaxed">
-                {t('about.work.vetty.description')}
-              </p>
+              <ul className="space-y-2 text-zinc-700 dark:text-zinc-300">
+                <li>• {t('about.work.vetty.point1')}</li>
+                <li>• {t('about.work.vetty.point2')}</li>
+                <li>• {t('about.work.vetty.point3')}</li>
+                <li>• {t('about.work.vetty.point4')}</li>
+              </ul>
             </div>
 
             {/* Accenture */}

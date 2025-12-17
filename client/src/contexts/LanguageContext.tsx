@@ -8,6 +8,7 @@ type Translations = {
   'nav.techStack': string
   'nav.contact': string
   'nav.about': string
+  'nav.cv': string
   
   // Hero
   'hero.title': string
@@ -24,7 +25,10 @@ type Translations = {
   'about.work.vetty.role': string
   'about.work.vetty.period': string
   'about.work.vetty.company': string
-  'about.work.vetty.description': string
+  'about.work.vetty.point1': string
+  'about.work.vetty.point2': string
+  'about.work.vetty.point3': string
+  'about.work.vetty.point4': string
   'about.work.accenture.role': string
   'about.work.accenture.period': string
   'about.work.accenture.company': string
@@ -186,6 +190,7 @@ const translations: Record<Language, Translations> = {
     'nav.techStack': 'Tech Stack',
     'nav.contact': 'Contact',
     'nav.about': 'About',
+    'nav.cv': 'Download my Resume',
     
     'hero.title': 'Sol Serki',
     'hero.subtitle': 'Over six years building reliable web backends (.NET, Java/Spring). Now expanding into Node.js, React, Tailwind, and UI animations.',
@@ -195,19 +200,22 @@ const translations: Record<Language, Translations> = {
     'about.title': 'About Me',
     'about.subtitle': 'Sol Serki',
     'about.profile.title': 'Profile',
-    'about.profile.description': 'Back-end developer with 6+ years of experience in web applications, specializing in .NET. I have a strong track record of delivering high quality code, including best practices such as unit testing and development focused on scalability and reliability.',
+    'about.profile.description': 'Back-End Developer with 6+ years of experience building scalable web applications, specializing in .NET and Java Spring Boot. Proven track record delivering high-quality, maintainable code with focus on best practices including unit testing, scalability, and reliability. Experienced in leading development teams and facilitating international collaboration.',
     'about.work.title': 'Work Experience',
     'about.work.vetty.role': 'Full-Stack Lead Developer',
     'about.work.vetty.period': 'Nov 2023 - Present',
     'about.work.vetty.company': 'Vetty Startup - Rosario',
-    'about.work.vetty.description': 'Currently working as a Full-Stack developer, leading the creation of a comprehensive management application for a veterinary clinic, developed in Java with Spring Boot. My focus is on tackling challenges such as designing a scalable architecture, implementing key functionalities, and ensuring a smooth user experience. Additionally, I am focused on delivering a robust and efficient solution that meets the specific needs of the client.',
+    'about.work.vetty.point1': 'Lead end-to-end development of a comprehensive veterinary clinic management application using Java with Spring Boot.',
+    'about.work.vetty.point2': 'Designed scalable architecture to support business growth and ensure long-term maintainability.',
+    'about.work.vetty.point3': 'Implemented key functionalities focused on delivering a seamless user experience.',
+    'about.work.vetty.point4': 'Coordinated with stakeholders to align technical solutions with specific client requirements.',
     'about.work.accenture.role': 'Back-End Developer',
     'about.work.accenture.period': 'Jan 2018 - July 2023',
     'about.work.accenture.company': 'Accenture - Rosario',
-    'about.work.accenture.point1': 'Developed robust and maintainable web components, including REST APIs for system integration, achieving high client satisfaction rates and meeting deadlines.',
-    'about.work.accenture.point2': 'Applied design patterns that reduced unit test execution time by 85%, increasing development cycle efficiency.',
-    'about.work.accenture.point3': 'Led as the technical English referent, facilitating communication between international teams and clients.',
-    'about.work.accenture.point4': 'Fostered a collaborative and positive work environment, promoting high team performance.',
+    'about.work.accenture.point1': 'Developed robust web components and REST APIs for system integration, achieving high client satisfaction rates.',
+    'about.work.accenture.point2': 'Optimized design patterns, reducing unit test execution time by 85% and increasing development cycle efficiency.',
+    'about.work.accenture.point3': 'Led technical communication as English referent, facilitating coordination between international teams and clients.',
+    'about.work.accenture.point4': 'Identified and resolved bugs and design flaws, improving application stability and maintainability.',
     'about.education.title': 'Education',
     'about.education.architecture.degree': 'Honours Bachelor Degree in Architecture',
     'about.education.architecture.school': 'Buenos Aires University',
@@ -353,6 +361,7 @@ const translations: Record<Language, Translations> = {
     'nav.techStack': 'Stack Técnico',
     'nav.contact': 'Contacto',
     'nav.about': 'Sobre Mí',
+    'nav.cv': 'Descarga mi CV',
     
     'hero.title': 'Sol Serki',
     'hero.subtitle': 'Más de seis años construyendo backends web confiables (.NET, Java/Spring). Ahora expandiéndome a Node.js, React, Tailwind y animaciones UI.',
@@ -362,19 +371,22 @@ const translations: Record<Language, Translations> = {
     'about.title': 'Sobre Mí',
     'about.subtitle': 'Sol Serki',
     'about.profile.title': 'Perfil',
-    'about.profile.description': 'Desarrolladora back-end con 6+ años de experiencia en aplicaciones web, especializada en .NET. Tengo un sólido historial de entrega de código de alta calidad, incluyendo mejores prácticas como unit testing y desarrollo enfocado en escalabilidad y confiabilidad.',
+    'about.profile.description': 'Desarrolladora Back-End con 6+ años de experiencia construyendo aplicaciones web escalables, especializada en .NET y Java Spring Boot. Historial comprobado entregando código de alta calidad y mantenible con enfoque en mejores prácticas incluyendo unit testing, escalabilidad y confiabilidad. Experiencia liderando equipos de desarrollo y facilitando colaboración internacional.',
     'about.work.title': 'Experiencia Laboral',
     'about.work.vetty.role': 'Full-Stack Lead Developer',
     'about.work.vetty.period': 'Nov 2023 - Presente',
     'about.work.vetty.company': 'Vetty Startup - Rosario',
-    'about.work.vetty.description': 'Actualmente trabajo como desarrolladora Full-Stack, liderando la creación de una aplicación de gestión integral para una clínica veterinaria, desarrollada en Java con Spring Boot. Mi enfoque está en abordar desafíos como el diseño de una arquitectura escalable, la implementación de funcionalidades clave y asegurar una experiencia de usuario fluida. Además, estoy enfocada en entregar una solución robusta y eficiente que cumpla con las necesidades específicas del cliente.',
+    'about.work.vetty.point1': 'Lidero el desarrollo end-to-end de una aplicación integral de gestión para clínica veterinaria usando Java con Spring Boot.',
+    'about.work.vetty.point2': 'Diseñé arquitectura escalable para soportar el crecimiento del negocio y asegurar mantenibilidad a largo plazo.',
+    'about.work.vetty.point3': 'Implementé funcionalidades clave enfocadas en entregar una experiencia de usuario fluida.',
+    'about.work.vetty.point4': 'Coordiné con stakeholders para alinear soluciones técnicas con requerimientos específicos del cliente.',
     'about.work.accenture.role': 'Desarrolladora Back-End',
     'about.work.accenture.period': 'Ene 2018 - Jul 2023',
     'about.work.accenture.company': 'Accenture - Rosario',
-    'about.work.accenture.point1': 'Desarrollé componentes web robustos y mantenibles, incluyendo APIs REST para integración de sistemas, logrando altas tasas de satisfacción del cliente y cumpliendo plazos.',
-    'about.work.accenture.point2': 'Apliqué patrones de diseño que redujeron el tiempo de ejecución de unit tests en un 85%, aumentando la eficiencia del ciclo de desarrollo.',
-    'about.work.accenture.point3': 'Lideré como referente técnico de inglés, facilitando la comunicación entre equipos internacionales y clientes.',
-    'about.work.accenture.point4': 'Fomenté un ambiente de trabajo colaborativo y positivo, promoviendo el alto rendimiento del equipo.',
+    'about.work.accenture.point1': 'Desarrollé componentes web robustos y APIs REST para integración de sistemas, logrando altas tasas de satisfacción del cliente.',
+    'about.work.accenture.point2': 'Optimicé patrones de diseño, reduciendo el tiempo de ejecución de unit tests en un 85% e incrementando la eficiencia del ciclo de desarrollo.',
+    'about.work.accenture.point3': 'Lideré comunicación técnica como referente de inglés, facilitando coordinación entre equipos internacionales y clientes.',
+    'about.work.accenture.point4': 'Identifiqué y resolví bugs y fallas de diseño, mejorando la estabilidad y mantenibilidad de las aplicaciones.',
     'about.education.title': 'Educación',
     'about.education.architecture.degree': 'Licenciatura con Honores en Arquitectura',
     'about.education.architecture.school': 'Universidad de Buenos Aires',
