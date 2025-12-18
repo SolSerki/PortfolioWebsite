@@ -390,7 +390,7 @@ export default function KWTarotReading() {
           {selectedCards.every(card => card.isRevealed) && (
             <div className="text-center mt-8 p-6 bg-gradient-to-br from-cyan-900/20 to-blue-900/20 rounded-xl border border-cyan-500/30">
               <p className="text-zinc-300 italic">
-                Tu lectura de 7 cartas está completa. Reflexiona sobre el camino revelado.
+                Tu lectura de 7 cartas está completa.
               </p>
             </div>
           )}

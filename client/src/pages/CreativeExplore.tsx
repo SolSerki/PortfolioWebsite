@@ -1,9 +1,10 @@
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
+import { HiArrowLeft } from 'react-icons/hi2'
 import SplashCursor from '../components/SplashCursor'
 import TarotSelector from '../components/TarotSelector'
 import KnightsWitches from '../components/knights-witches/KnightsWitches'
 import {
-  CreativeHeader,
   CreativeTabs,
   CursorToggle,
   CreativeFooter,
@@ -13,30 +14,38 @@ import {
   type CreativeTab
 } from '../components/creative'
 
-export default function Creative() {
+export default function CreativeExplore() {
   const [activeTab, setActiveTab] = useState<CreativeTab>('poems')
   const [isCursorEnabled, setIsCursorEnabled] = useState(true)
-
-  const handleTabChange = (tab: CreativeTab) => {
-    setActiveTab(tab)
-  }
 
   return (
     <>
       {isCursorEnabled && <SplashCursor />}
       <div className="min-h-screen bg-gradient-to-br from-purple-950 via-zinc-900 to-black">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 py-8 sm:py-12 md:py-16">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 py-6 sm:py-8">
           
-          <CursorToggle 
-            isEnabled={isCursorEnabled} 
-            onToggle={() => setIsCursorEnabled(!isCursorEnabled)} 
-          />
-          
-          <CreativeHeader />
+          {/* Top Bar */}
+          <div className="flex items-center justify-between mb-6">
+            {/* Back to Landing */}
+            <Link 
+              to="/"
+              className="flex items-center gap-2 text-zinc-400 hover:text-purple-400 transition-colors text-sm"
+            >
+              <HiArrowLeft />
+              <span className="hidden sm:inline">Portfolio</span>
+            </Link>
 
+            {/* Cursor Toggle */}
+            <CursorToggle 
+              isEnabled={isCursorEnabled} 
+              onToggle={() => setIsCursorEnabled(!isCursorEnabled)} 
+            />
+          </div>
+
+          {/* Tabs Navigation */}
           <CreativeTabs 
             activeTab={activeTab} 
-            onTabChange={handleTabChange} 
+            onTabChange={setActiveTab} 
           />
 
           {/* Content Area */}

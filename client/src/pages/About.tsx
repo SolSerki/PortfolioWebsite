@@ -6,7 +6,7 @@ export default function About() {
   const { t } = useLanguage()
 
   const handleCreativeClick = () => {
-    window.location.href = '/?creative=true'
+    window.location.href = '/creative'
   }
 
   return (

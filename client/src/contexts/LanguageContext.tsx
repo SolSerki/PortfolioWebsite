@@ -9,6 +9,7 @@ type Translations = {
   'nav.contact': string
   'nav.about': string
   'nav.cv': string
+  'nav.creative': string
   
   // Hero
   'hero.title': string
@@ -191,6 +192,7 @@ const translations: Record<Language, Translations> = {
     'nav.contact': 'Contact',
     'nav.about': 'About',
     'nav.cv': 'Download my Resume',
+    'nav.creative': 'Creative',
     
     'hero.title': 'Sol Serki',
     'hero.subtitle': 'Over six years building reliable web backends (.NET, Java/Spring). Now expanding into Node.js, React, Tailwind, and UI animations.',
@@ -362,6 +364,7 @@ const translations: Record<Language, Translations> = {
     'nav.contact': 'Contacto',
     'nav.about': 'Sobre Mí',
     'nav.cv': 'Descarga mi CV',
+    'nav.creative': 'Creativo',
     
     'hero.title': 'Sol Serki',
     'hero.subtitle': 'Más de seis años construyendo backends web confiables (.NET, Java/Spring). Ahora expandiéndome a Node.js, React, Tailwind y animaciones UI.',
