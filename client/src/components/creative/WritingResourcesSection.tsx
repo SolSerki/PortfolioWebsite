@@ -1,50 +1,138 @@
-import { useState } from 'react'
-import Trama from '../writing-resources/Trama'
-import Ambientacion from '../writing-resources/Ambientacion'
-import Personajes from '../writing-resources/Personajes'
-import Worldbuilding from '../writing-resources/Worldbuilding'
-import SistemasMagia from '../writing-resources/SistemasMagia'
-
-type WritingResourceTab = 'trama' | 'ambientacion' | 'personajes' | 'worldbuilding' | 'sistemas-magia'
-
-const subTabs = [
-  { id: 'trama' as WritingResourceTab, label: 'Trama' },
-  { id: 'ambientacion' as WritingResourceTab, label: 'Ambientación' },
-  { id: 'personajes' as WritingResourceTab, label: 'Personajes' },
-  { id: 'worldbuilding' as WritingResourceTab, label: 'Worldbuilding' },
-  { id: 'sistemas-magia' as WritingResourceTab, label: 'Sistemas de Magia' }
-]
+import { useState, useEffect } from 'react'
+import { AnimatePresence } from 'motion/react'
+import type { WRSection } from '../writing-resources/types'
+import { WRSidebar, WRMobileHeader } from '../writing-resources/navigation'
+import { WRContentWrapper, TramaSection, PersonajesSection } from '../writing-resources/content'
 
 export default function WritingResourcesSection() {
-  const [activeTab, setActiveTab] = useState<WritingResourceTab>('trama')
+  // Navigation state
+  const [activeSection, setActiveSection] = useState<WRSection>('trama')
+  const [activeSubSection, setActiveSubSection] = useState<string>('')
+  const [searchQuery, setSearchQuery] = useState('')
+  
+  // Mobile state
+  const [isMobile, setIsMobile] = useState(false)
+  const [sidebarOpen, setSidebarOpen] = useState(false)
+  const [showMobileSearch, setShowMobileSearch] = useState(false)
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 1024)
+    checkMobile()
+    window.addEventListener('resize', checkMobile)
+    return () => window.removeEventListener('resize', checkMobile)
+  }, [])
+
+  const handleSectionChange = (section: WRSection, subSection?: string) => {
+    setActiveSection(section)
+    setActiveSubSection(subSection || '')
+    if (isMobile) setSidebarOpen(false)
+  }
+
+  // Render content based on active section
+  const renderContent = () => {
+    switch (activeSection) {
+      case 'trama':
+        return (
+          <WRContentWrapper 
+            section="trama" 
+            subSection={activeSubSection} 
+            title="Trama" 
+            description="Estructuras narrativas, técnicas y ejercicios para construir historias"
+          >
+            <TramaSection subSection={activeSubSection} searchQuery={searchQuery} />
+          </WRContentWrapper>
+        )
+
+      case 'ambientacion':
+        return (
+          <WRContentWrapper 
+            section="ambientacion" 
+            subSection={activeSubSection} 
+            title="Ambientación" 
+            description="Descripción sensorial, atmósfera y construcción de escenarios"
+          >
+            <div className="text-center py-12 text-zinc-500">
+              <p>Sección en construcción...</p>
+            </div>
+          </WRContentWrapper>
+        )
+
+      case 'personajes':
+        return (
+          <WRContentWrapper 
+            section="personajes" 
+            subSection={activeSubSection} 
+            title="Personajes" 
+            description="Desarrollo de personajes, arquetipos, diálogos y motivaciones"
+          >
+            <PersonajesSection subSection={activeSubSection} searchQuery={searchQuery} />
+          </WRContentWrapper>
+        )
+
+      case 'worldbuilding':
+        return (
+          <WRContentWrapper 
+            section="worldbuilding" 
+            subSection={activeSubSection} 
+            title="Worldbuilding" 
+            description="Construcción de mundos: geografía, cultura, historia y más"
+          >
+            <div className="text-center py-12 text-zinc-500">
+              <p>Sección en construcción...</p>
+            </div>
+          </WRContentWrapper>
+        )
+
+      case 'sistemas-magia':
+        return (
+          <WRContentWrapper 
+            section="sistemas-magia" 
+            subSection={activeSubSection} 
+            title="Sistemas de Magia" 
+            description="Diseño de sistemas mágicos: reglas, limitaciones y costos"
+          >
+            <div className="text-center py-12 text-zinc-500">
+              <p>Sección en construcción...</p>
+            </div>
+          </WRContentWrapper>
+        )
+
+      default:
+        return null
+    }
+  }
 
   return (
-    <div className="space-y-8">
-      {/* Sub-navegación */}
-      <div className="flex flex-wrap justify-center gap-2">
-        {subTabs.map((subTab) => (
-          <button
-            key={subTab.id}
-            onClick={() => setActiveTab(subTab.id)}
-            className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
-              activeTab === subTab.id
-                ? 'bg-purple-600 text-white'
-                : 'bg-zinc-800/50 text-zinc-400 hover:text-white hover:bg-zinc-700/50'
-            }`}
-          >
-            {subTab.label}
-          </button>
-        ))}
-      </div>
+    <div className="h-[600px] lg:h-[700px] flex flex-col lg:flex-row rounded-xl overflow-hidden border border-purple-500/20">
+      {/* Mobile Header */}
+      <WRMobileHeader
+        activeSection={activeSection}
+        isSidebarOpen={sidebarOpen}
+        onToggleSidebar={() => setSidebarOpen(!sidebarOpen)}
+        searchQuery={searchQuery}
+        onSearchChange={setSearchQuery}
+        showSearch={showMobileSearch}
+        onToggleSearch={() => setShowMobileSearch(!showMobileSearch)}
+      />
 
-      {/* Contenido */}
-      <div>
-        {activeTab === 'trama' && <Trama />}
-        {activeTab === 'ambientacion' && <Ambientacion />}
-        {activeTab === 'personajes' && <Personajes />}
-        {activeTab === 'worldbuilding' && <Worldbuilding />}
-        {activeTab === 'sistemas-magia' && <SistemasMagia />}
-      </div>
+      {/* Sidebar */}
+      <WRSidebar
+        activeSection={activeSection}
+        activeSubSection={activeSubSection}
+        onSectionChange={handleSectionChange}
+        searchQuery={searchQuery}
+        onSearchChange={setSearchQuery}
+        isMobile={isMobile}
+        isOpen={sidebarOpen}
+        onClose={() => setSidebarOpen(false)}
+      />
+
+      {/* Main Content Area */}
+      <main className="flex-1 overflow-y-auto p-4 md:p-6 bg-zinc-900/30">
+        <AnimatePresence mode="wait">
+          {renderContent()}
+        </AnimatePresence>
+      </main>
     </div>
   )
 }
