@@ -4,92 +4,22 @@ import { WRSearchFilters, type FilterGroup } from '../search'
 import { ResourceCard } from '../entries'
 import type { TramaResource } from '../types'
 
-// Datos de ejemplo
+// Template para tus recursos - Copia este formato para agregar nuevos recursos
 const sampleResources: TramaResource[] = [
-  {
-    id: 'trama-1',
-    type: 'trama',
-    title: 'La Estructura de Tres Actos',
-    shortDescription: 'La estructura narrativa más utilizada en la historia del storytelling.',
-    description: 'La estructura de tres actos divide la historia en Planteamiento (25%), Nudo (50%) y Desenlace (25%). Es la base de la mayoría de las historias exitosas en cine, literatura y teatro.',
-    content: `**Primer Acto - Planteamiento (25%)**
-• Introducción del protagonista y su mundo ordinario
-• Establecimiento del conflicto principal
-• Punto de giro que lanza la historia
-
-**Segundo Acto - Nudo (50%)**
-• El protagonista enfrenta obstáculos crecientes
-• Punto medio: revelación o cambio importante
-• Crisis: el momento más oscuro
-
-**Tercer Acto - Desenlace (25%)**
-• Clímax: confrontación final
-• Resolución del conflicto
-• Nuevo equilibrio`,
-    resourceType: 'structure',
-    category: 'estructuras',
-    difficulty: 'beginner',
-    tags: ['estructura', 'básico', 'tres actos'],
-    relatedResources: ['El Viaje del Héroe', 'Save the Cat']
-  },
-  {
-    id: 'trama-2',
-    type: 'trama',
-    title: 'El Viaje del Héroe',
-    shortDescription: 'El monomito de Joseph Campbell aplicado a la narrativa moderna.',
-    description: 'Estructura circular de 12 etapas que describe el viaje transformador del protagonista, desde el mundo ordinario hasta el regreso con el elixir.',
-    resourceType: 'structure',
-    category: 'estructuras',
-    difficulty: 'intermediate',
-    tags: ['estructura', 'campbell', 'monomito', 'fantasía'],
-    relatedResources: ['La Estructura de Tres Actos']
-  },
-  {
-    id: 'trama-3',
-    type: 'trama',
-    title: 'Foreshadowing Efectivo',
-    shortDescription: 'Cómo plantar pistas sin revelar el final.',
-    description: 'El foreshadowing es una técnica que prepara al lector para eventos futuros sin arruinar la sorpresa. Bien ejecutado, hace que los giros se sientan inevitables en retrospectiva.',
-    content: `**Tipos de Foreshadowing:**
-• Directo: Profecías, advertencias explícitas
-• Simbólico: Objetos, colores, patrones recurrentes
-• Atmosférico: El tono presagia eventos
-• Retroactivo: Detalles que cobran significado después
-
-**Regla de oro:** Si el lector puede predecir el giro, es muy obvio. Si no tiene sentido en retrospectiva, es muy sutil.`,
-    resourceType: 'technique',
-    category: 'tecnicas',
-    difficulty: 'intermediate',
-    tags: ['técnica', 'suspense', 'giros']
-  },
-  {
-    id: 'trama-4',
-    type: 'trama',
-    title: 'Ejercicio: El Reloj',
-    shortDescription: 'Crea tensión limitando el tiempo de tu protagonista.',
-    description: 'Escribe una escena donde el protagonista tiene exactamente 10 minutos para lograr algo crucial. Practica el manejo de la tensión temporal.',
-    content: `**Instrucciones:**
-1. Define qué debe lograr el protagonista
-2. Establece las consecuencias del fracaso
-3. Escribe la escena mostrando el paso del tiempo
-4. Añade al menos un obstáculo inesperado
-5. Máximo 1000 palabras`,
-    resourceType: 'exercise',
-    category: 'ejercicios',
-    difficulty: 'beginner',
-    tags: ['ejercicio', 'tensión', 'práctica']
-  },
-  {
-    id: 'trama-5',
-    type: 'trama',
-    title: 'Subtramas que Enriquecen',
-    shortDescription: 'Cómo las historias secundarias fortalecen la trama principal.',
-    description: 'Las subtramas bien diseñadas reflejan, contrastan o complementan el tema principal, añadiendo profundidad sin distraer.',
-    resourceType: 'tip',
-    category: 'tips',
-    difficulty: 'advanced',
-    tags: ['subtrama', 'estructura', 'avanzado']
-  }
+  // {
+  //   id: 'trama-1', // ID único
+  //   type: 'trama',
+  //   title: 'Título del recurso',
+  //   shortDescription: 'Descripción breve para la vista previa',
+  //   description: 'Descripción completa del recurso',
+  //   content: `Contenido detallado aquí.
+  //   
+  //   Puedes usar múltiples líneas y formateo Markdown.`,
+  //   resourceType: 'structure', // 'structure' | 'technique' | 'exercise' | 'tip'
+  //   category: 'estructuras', // categoría para organización interna
+  //   tags: ['tag1', 'tag2'], // tags opcionales
+  //   relatedResources: ['id-otro-recurso'] // IDs de recursos relacionados (opcional)
+  // }
 ]
 
 interface TramaSectionProps {
@@ -110,15 +40,6 @@ export default function TramaSection({ subSection, searchQuery }: TramaSectionPr
         { id: 'technique', label: 'Técnicas' },
         { id: 'exercise', label: 'Ejercicios' },
         { id: 'tip', label: 'Tips' }
-      ]
-    },
-    {
-      id: 'difficulty',
-      label: 'Dificultad',
-      options: [
-        { id: 'beginner', label: 'Principiante' },
-        { id: 'intermediate', label: 'Intermedio' },
-        { id: 'advanced', label: 'Avanzado' }
       ]
     }
   ]
@@ -164,11 +85,6 @@ export default function TramaSection({ subSection, searchQuery }: TramaSectionPr
     // Active filters - type
     if (activeFilters.type?.length) {
       result = result.filter(r => activeFilters.type.includes(r.resourceType))
-    }
-
-    // Active filters - difficulty
-    if (activeFilters.difficulty?.length) {
-      result = result.filter(r => r.difficulty && activeFilters.difficulty.includes(r.difficulty))
     }
 
     return result

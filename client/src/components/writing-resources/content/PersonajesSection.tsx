@@ -4,98 +4,22 @@ import { WRSearchFilters, type FilterGroup } from '../search'
 import { ResourceCard } from '../entries'
 import type { PersonajesResource } from '../types'
 
+// Template para tus recursos - Copia este formato para agregar nuevos recursos
 const sampleResources: PersonajesResource[] = [
-  {
-    id: 'personaje-1',
-    type: 'personajes',
-    title: 'Arquetipos de Jung',
-    shortDescription: 'Los 12 arquetipos universales para crear personajes memorables.',
-    description: 'Los arquetipos de Carl Jung son patrones universales del inconsciente colectivo que resuenan con todos los lectores. Úsalos como base, no como molde rígido.',
-    content: `**Los 12 Arquetipos:**
-1. El Inocente - Optimista, busca la felicidad
-2. El Huérfano - Realista, busca pertenencia
-3. El Guerrero - Valiente, busca dominio
-4. El Cuidador - Altruista, busca proteger
-5. El Buscador - Independiente, busca libertad
-6. El Amante - Apasionado, busca intimidad
-7. El Destructor - Rebelde, busca liberación
-8. El Creador - Imaginativo, busca innovación
-9. El Gobernante - Líder, busca control
-10. El Mago - Visionario, busca transformación
-11. El Sabio - Pensador, busca verdad
-12. El Bufón - Alegre, busca disfrutar el momento`,
-    resourceType: 'archetype',
-    category: 'arquetipos',
-    difficulty: 'intermediate',
-    tags: ['arquetipos', 'jung', 'psicología']
-  },
-  {
-    id: 'personaje-2',
-    type: 'personajes',
-    title: 'El Método de la Herida',
-    shortDescription: 'Crea personajes complejos partiendo de su trauma fundamental.',
-    description: 'Todo personaje memorable tiene una herida emocional que define sus comportamientos, miedos y deseos. Esta herida es el motor de su arco de transformación.',
-    content: `**Componentes de la Herida:**
-• La Herida: Evento traumático del pasado
-• La Mentira: Lo que el personaje cree por la herida
-• El Miedo: Lo que evita a toda costa
-• El Deseo: Lo que cree que lo sanará
-• La Necesidad: Lo que realmente necesita
-
-**Ejemplo:**
-Herida: Abandono en la infancia
-Mentira: "No soy digno de amor"
-Miedo: Intimidad emocional
-Deseo: Éxito profesional (prueba de valor)
-Necesidad: Conexión genuina`,
-    resourceType: 'development',
-    category: 'desarrollo',
-    difficulty: 'intermediate',
-    tags: ['desarrollo', 'psicología', 'arco']
-  },
-  {
-    id: 'personaje-3',
-    type: 'personajes',
-    title: 'Diálogo que Revela',
-    shortDescription: 'Técnicas para que cada línea de diálogo trabaje en múltiples niveles.',
-    description: 'El mejor diálogo hace al menos dos cosas a la vez: avanza la trama Y revela carácter. Evita el diálogo que solo transmite información.',
-    content: `**Técnicas clave:**
-• Subtexto: Lo que NO se dice es tan importante
-• Voz única: Cada personaje habla diferente
-• Conflicto: Agendas opuestas en cada conversación
-• Economía: Menos es más
-
-**Test de diálogo:**
-¿Podrías saber quién habla sin etiquetas de diálogo?
-¿La conversación tiene tensión?
-¿Se revela algo sobre los personajes?`,
-    resourceType: 'dialogue',
-    category: 'dialogos',
-    difficulty: 'advanced',
-    tags: ['diálogo', 'técnica', 'subtexto']
-  },
-  {
-    id: 'personaje-4',
-    type: 'personajes',
-    title: 'Motivaciones Contradictorias',
-    shortDescription: 'Crea personajes realistas con deseos en conflicto interno.',
-    description: 'Los personajes más interesantes quieren cosas que se contradicen entre sí. Esta tensión interna genera drama sin necesidad de villanos externos.',
-    resourceType: 'motivation',
-    category: 'motivaciones',
-    difficulty: 'advanced',
-    tags: ['motivación', 'conflicto interno', 'complejidad']
-  },
-  {
-    id: 'personaje-5',
-    type: 'personajes',
-    title: 'Backstory Iceberg',
-    shortDescription: 'Conoce el 100% de la historia de tu personaje, muestra solo el 10%.',
-    description: 'Como un iceberg, la mayor parte del backstory debe permanecer bajo la superficie. El lector lo sentirá aunque no lo vea explícitamente.',
-    resourceType: 'backstory',
-    category: 'backstory',
-    difficulty: 'beginner',
-    tags: ['backstory', 'historia', 'técnica']
-  }
+  // {
+  //   id: 'personaje-1', // ID único
+  //   type: 'personajes',
+  //   title: 'Título del recurso',
+  //   shortDescription: 'Descripción breve para la vista previa',
+  //   description: 'Descripción completa del recurso',
+  //   content: `Contenido detallado aquí.
+  //   
+  //   Puedes usar múltiples líneas y formateo Markdown.`,
+  //   resourceType: 'development', // 'development' | 'archetype' | 'dialogue' | 'motivation' | 'backstory'
+  //   category: 'desarrollo', // categoría para organización interna
+  //   tags: ['tag1', 'tag2'], // tags opcionales
+  //   relatedResources: ['id-otro-recurso'] // IDs de recursos relacionados (opcional)
+  // }
 ]
 
 interface PersonajesSectionProps {
@@ -117,15 +41,6 @@ export default function PersonajesSection({ subSection, searchQuery }: Personaje
         { id: 'dialogue', label: 'Diálogos' },
         { id: 'motivation', label: 'Motivaciones' },
         { id: 'backstory', label: 'Backstory' }
-      ]
-    },
-    {
-      id: 'difficulty',
-      label: 'Dificultad',
-      options: [
-        { id: 'beginner', label: 'Principiante' },
-        { id: 'intermediate', label: 'Intermedio' },
-        { id: 'advanced', label: 'Avanzado' }
       ]
     }
   ]
@@ -172,10 +87,6 @@ export default function PersonajesSection({ subSection, searchQuery }: Personaje
 
     if (activeFilters.type?.length) {
       result = result.filter(r => activeFilters.type.includes(r.resourceType))
-    }
-
-    if (activeFilters.difficulty?.length) {
-      result = result.filter(r => r.difficulty && activeFilters.difficulty.includes(r.difficulty))
     }
 
     return result

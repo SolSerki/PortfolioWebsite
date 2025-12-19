@@ -34,7 +34,6 @@ export type BaseResource = {
   content?: string
   tags?: string[]
   relatedResources?: string[]
-  difficulty?: 'beginner' | 'intermediate' | 'advanced'
   category: string
 }
 

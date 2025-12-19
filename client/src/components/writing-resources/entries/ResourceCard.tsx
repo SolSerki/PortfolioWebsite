@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'motion/react'
-import { HiChevronDown, HiTag, HiAcademicCap, HiBookOpen } from 'react-icons/hi2'
+import { HiChevronDown, HiTag, HiBookOpen } from 'react-icons/hi2'
 import type { BaseResource } from '../types'
 
 interface ResourceCardProps {
@@ -55,18 +55,6 @@ export default function ResourceCard({
     }
   }
 
-  const difficultyColors = {
-    beginner: 'bg-green-500/20 text-green-300',
-    intermediate: 'bg-amber-500/20 text-amber-300',
-    advanced: 'bg-red-500/20 text-red-300'
-  }
-
-  const difficultyLabels = {
-    beginner: 'Principiante',
-    intermediate: 'Intermedio',
-    advanced: 'Avanzado'
-  }
-
   const colors = colorClasses[accentColor as keyof typeof colorClasses] || colorClasses.purple
 
   return (
@@ -99,12 +87,6 @@ export default function ResourceCard({
           
           {/* Badges */}
           <div className="flex flex-wrap gap-1.5 mt-1">
-            {resource.difficulty && (
-              <span className={`text-xs px-2 py-0.5 rounded-full flex items-center gap-1 ${difficultyColors[resource.difficulty]}`}>
-                <HiAcademicCap className="text-xs" />
-                {difficultyLabels[resource.difficulty]}
-              </span>
-            )}
             {renderBadges && renderBadges()}
           </div>
 
